@@ -14,9 +14,14 @@
 		29C2D3062138836E00397903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D3042138836E00397903 /* LaunchScreen.storyboard */; };
 		29C2D30F2138857000397903 /* MRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D30E2138857000397903 /* MRTextField.swift */; };
 		29C2D3112138857E00397903 /* MRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D3102138857E00397903 /* MRButton.swift */; };
+		29C2D31E21398F0100397903 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D31D21398F0100397903 /* Constants.swift */; };
+		29C2D32021398F3900397903 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D31F21398F3900397903 /* UIColor+Theme.swift */; };
+		29C2D3222139930F00397903 /* MRTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D3212139930F00397903 /* MRTextField.xib */; };
+		E3A8F38BBFF1485222DD6544 /* Pods_Metereader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E77507AD7A2427E2D8B69B1 /* Pods_Metereader.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		014AB7B6319F657A0D5837FC /* Pods-Metereader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metereader.release.xcconfig"; path = "Pods/Target Support Files/Pods-Metereader/Pods-Metereader.release.xcconfig"; sourceTree = "<group>"; };
 		29C2D2F82138836D00397903 /* Metereader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metereader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C2D2FB2138836D00397903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29C2D2FD2138836D00397903 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +31,11 @@
 		29C2D3072138836E00397903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29C2D30E2138857000397903 /* MRTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRTextField.swift; sourceTree = "<group>"; };
 		29C2D3102138857E00397903 /* MRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRButton.swift; sourceTree = "<group>"; };
+		29C2D31D21398F0100397903 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		29C2D31F21398F3900397903 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
+		29C2D3212139930F00397903 /* MRTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRTextField.xib; sourceTree = "<group>"; };
+		4028EE9BDFD0781F8D18D0B1 /* Pods-Metereader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metereader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Metereader/Pods-Metereader.debug.xcconfig"; sourceTree = "<group>"; };
+		9E77507AD7A2427E2D8B69B1 /* Pods_Metereader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Metereader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +43,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3A8F38BBFF1485222DD6544 /* Pods_Metereader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AA3A571ACE73AA45F26B06D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4028EE9BDFD0781F8D18D0B1 /* Pods-Metereader.debug.xcconfig */,
+				014AB7B6319F657A0D5837FC /* Pods-Metereader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		29C2D2EF2138836C00397903 = {
 			isa = PBXGroup;
 			children = (
 				29C2D2FA2138836D00397903 /* Metereader */,
 				29C2D2F92138836D00397903 /* Products */,
+				0AA3A571ACE73AA45F26B06D /* Pods */,
+				715AA3172DA4CB13A9FF7230 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +80,8 @@
 		29C2D2FA2138836D00397903 /* Metereader */ = {
 			isa = PBXGroup;
 			children = (
+				29C2D31421398C0400397903 /* Supporting Files */,
+				29C2D31221398A5B00397903 /* 3rd Party */,
 				29C2D30D2138852A00397903 /* 1st Party */,
 				29C2D2FB2138836D00397903 /* AppDelegate.swift */,
 				29C2D2FD2138836D00397903 /* LoginViewController.swift */,
@@ -74,8 +98,41 @@
 			children = (
 				29C2D30E2138857000397903 /* MRTextField.swift */,
 				29C2D3102138857E00397903 /* MRButton.swift */,
+				29C2D3212139930F00397903 /* MRTextField.xib */,
 			);
 			path = "1st Party";
+			sourceTree = "<group>";
+		};
+		29C2D31221398A5B00397903 /* 3rd Party */ = {
+			isa = PBXGroup;
+			children = (
+				29C2D31321398A6400397903 /* MMMaterialDesignSpinner */,
+			);
+			path = "3rd Party";
+			sourceTree = "<group>";
+		};
+		29C2D31321398A6400397903 /* MMMaterialDesignSpinner */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MMMaterialDesignSpinner;
+			sourceTree = "<group>";
+		};
+		29C2D31421398C0400397903 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				29C2D31D21398F0100397903 /* Constants.swift */,
+				29C2D31F21398F3900397903 /* UIColor+Theme.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		715AA3172DA4CB13A9FF7230 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E77507AD7A2427E2D8B69B1 /* Pods_Metereader.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,9 +142,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29C2D30A2138836E00397903 /* Build configuration list for PBXNativeTarget "Metereader" */;
 			buildPhases = (
+				4840DD19BE18AD4D198FF76E /* [CP] Check Pods Manifest.lock */,
 				29C2D2F42138836D00397903 /* Sources */,
 				29C2D2F52138836D00397903 /* Frameworks */,
 				29C2D2F62138836D00397903 /* Resources */,
+				EC30337349DE4764F1EE224D /* [CP] Embed Pods Frameworks */,
+				40FE1373F2BBC885964A5F30 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -110,6 +170,7 @@
 				TargetAttributes = {
 					29C2D2F72138836D00397903 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -136,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C2D3222139930F00397903 /* MRTextField.xib in Resources */,
 				29C2D3062138836E00397903 /* LaunchScreen.storyboard in Resources */,
 				29C2D3032138836E00397903 /* Assets.xcassets in Resources */,
 				29C2D3012138836D00397903 /* Main.storyboard in Resources */,
@@ -144,13 +206,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		40FE1373F2BBC885964A5F30 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Metereader/Pods-Metereader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4840DD19BE18AD4D198FF76E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Metereader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC30337349DE4764F1EE224D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Metereader/Pods-Metereader-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MMMaterialDesignSpinner/MMMaterialDesignSpinner.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMMaterialDesignSpinner.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Metereader/Pods-Metereader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		29C2D2F42138836D00397903 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C2D31E21398F0100397903 /* Constants.swift in Sources */,
 				29C2D3112138857E00397903 /* MRButton.swift in Sources */,
 				29C2D2FE2138836D00397903 /* LoginViewController.swift in Sources */,
+				29C2D32021398F3900397903 /* UIColor+Theme.swift in Sources */,
 				29C2D2FC2138836D00397903 /* AppDelegate.swift in Sources */,
 				29C2D30F2138857000397903 /* MRTextField.swift in Sources */,
 			);
@@ -294,8 +412,10 @@
 		};
 		29C2D30B2138836E00397903 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4028EE9BDFD0781F8D18D0B1 /* Pods-Metereader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EWH85CQYYJ;
 				INFOPLIST_FILE = Metereader/Info.plist;
@@ -305,6 +425,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.offensively-bad.Metereader";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -312,8 +433,10 @@
 		};
 		29C2D30C2138836E00397903 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 014AB7B6319F657A0D5837FC /* Pods-Metereader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EWH85CQYYJ;
 				INFOPLIST_FILE = Metereader/Info.plist;
