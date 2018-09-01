@@ -11,7 +11,7 @@ import UIKit
 class MRButton: UIButton {
 
     public var cornerRadius: CGFloat = 8 {
-        didSet { self.setNeedsLayout() }
+        didSet { self.layer.cornerRadius = cornerRadius; self.setNeedsLayout() }
     }
     
     public var color: UIColor = UIColor.themeColor() {
@@ -21,6 +21,10 @@ class MRButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         layoutLayer()
+        
+        // Theme fonts
+        self.titleLabel?.font = UIFont(name: Constants.secondaryFont(), size: 30) ?? UIFont.systemFont(ofSize: 30)
+        self.titleLabel?.textColor = UIColor.white
     }
     
     private var customLayer: CAShapeLayer?

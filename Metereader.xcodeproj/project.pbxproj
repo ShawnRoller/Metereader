@@ -17,6 +17,24 @@
 		29C2D31E21398F0100397903 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D31D21398F0100397903 /* Constants.swift */; };
 		29C2D32021398F3900397903 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D31F21398F3900397903 /* UIColor+Theme.swift */; };
 		29C2D3222139930F00397903 /* MRTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D3212139930F00397903 /* MRTextField.xib */; };
+		29C2D326213B25AC00397903 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D325213B25AC00397903 /* BaseViewController.swift */; };
+		29C2D33B213B2E7F00397903 /* Gotham-XLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D32A213B2E7E00397903 /* Gotham-XLight.otf */; };
+		29C2D33C213B2E7F00397903 /* Gotham-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D32B213B2E7E00397903 /* Gotham-BookItalic.otf */; };
+		29C2D33D213B2E7F00397903 /* Gotham-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D32C213B2E7E00397903 /* Gotham-BoldItalic.otf */; };
+		29C2D33E213B2E7F00397903 /* Gotham-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D32D213B2E7E00397903 /* Gotham-LightItalic.otf */; };
+		29C2D33F213B2E7F00397903 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D32E213B2E7E00397903 /* Gotham-Bold.otf */; };
+		29C2D340213B2E7F00397903 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D32F213B2E7E00397903 /* Gotham-Light.otf */; };
+		29C2D341213B2E7F00397903 /* Gotham-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D330213B2E7E00397903 /* Gotham-ThinItalic.otf */; };
+		29C2D342213B2E7F00397903 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D331213B2E7E00397903 /* Gotham-Medium.otf */; };
+		29C2D343213B2E7F00397903 /* Gotham-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D332213B2E7E00397903 /* Gotham-MediumItalic.otf */; };
+		29C2D344213B2E7F00397903 /* Gotham-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D333213B2E7E00397903 /* Gotham-Thin.otf */; };
+		29C2D345213B2E7F00397903 /* Gotham-XLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D334213B2E7E00397903 /* Gotham-XLightItalic.otf */; };
+		29C2D346213B2E7F00397903 /* Gotham-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D335213B2E7E00397903 /* Gotham-BlackItalic.otf */; };
+		29C2D347213B2E7F00397903 /* Gotham-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D336213B2E7E00397903 /* Gotham-Black.otf */; };
+		29C2D348213B2E7F00397903 /* gotham-book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D337213B2E7E00397903 /* gotham-book.ttf */; };
+		29C2D349213B2E7F00397903 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D338213B2E7F00397903 /* Gotham-Book.otf */; };
+		29C2D34A213B2E7F00397903 /* Gotham-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D339213B2E7F00397903 /* Gotham-Ultra.otf */; };
+		29C2D34B213B2E7F00397903 /* Gotham-UltraItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D33A213B2E7F00397903 /* Gotham-UltraItalic.otf */; };
 		E3A8F38BBFF1485222DD6544 /* Pods_Metereader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E77507AD7A2427E2D8B69B1 /* Pods_Metereader.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +52,24 @@
 		29C2D31D21398F0100397903 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		29C2D31F21398F3900397903 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		29C2D3212139930F00397903 /* MRTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRTextField.xib; sourceTree = "<group>"; };
+		29C2D325213B25AC00397903 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		29C2D32A213B2E7E00397903 /* Gotham-XLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-XLight.otf"; sourceTree = "<group>"; };
+		29C2D32B213B2E7E00397903 /* Gotham-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BookItalic.otf"; sourceTree = "<group>"; };
+		29C2D32C213B2E7E00397903 /* Gotham-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BoldItalic.otf"; sourceTree = "<group>"; };
+		29C2D32D213B2E7E00397903 /* Gotham-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-LightItalic.otf"; sourceTree = "<group>"; };
+		29C2D32E213B2E7E00397903 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
+		29C2D32F213B2E7E00397903 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
+		29C2D330213B2E7E00397903 /* Gotham-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-ThinItalic.otf"; sourceTree = "<group>"; };
+		29C2D331213B2E7E00397903 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
+		29C2D332213B2E7E00397903 /* Gotham-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-MediumItalic.otf"; sourceTree = "<group>"; };
+		29C2D333213B2E7E00397903 /* Gotham-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Thin.otf"; sourceTree = "<group>"; };
+		29C2D334213B2E7E00397903 /* Gotham-XLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-XLightItalic.otf"; sourceTree = "<group>"; };
+		29C2D335213B2E7E00397903 /* Gotham-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BlackItalic.otf"; sourceTree = "<group>"; };
+		29C2D336213B2E7E00397903 /* Gotham-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Black.otf"; sourceTree = "<group>"; };
+		29C2D337213B2E7E00397903 /* gotham-book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gotham-book.ttf"; sourceTree = "<group>"; };
+		29C2D338213B2E7F00397903 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
+		29C2D339213B2E7F00397903 /* Gotham-Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Ultra.otf"; sourceTree = "<group>"; };
+		29C2D33A213B2E7F00397903 /* Gotham-UltraItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-UltraItalic.otf"; sourceTree = "<group>"; };
 		4028EE9BDFD0781F8D18D0B1 /* Pods-Metereader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metereader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Metereader/Pods-Metereader.debug.xcconfig"; sourceTree = "<group>"; };
 		9E77507AD7A2427E2D8B69B1 /* Pods_Metereader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Metereader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -80,15 +116,16 @@
 		29C2D2FA2138836D00397903 /* Metereader */ = {
 			isa = PBXGroup;
 			children = (
+				29C2D329213B2E7200397903 /* Fonts */,
 				29C2D31421398C0400397903 /* Supporting Files */,
 				29C2D31221398A5B00397903 /* 3rd Party */,
 				29C2D30D2138852A00397903 /* 1st Party */,
-				29C2D2FB2138836D00397903 /* AppDelegate.swift */,
+				29C2D325213B25AC00397903 /* BaseViewController.swift */,
 				29C2D2FD2138836D00397903 /* LoginViewController.swift */,
+				29C2D2FB2138836D00397903 /* AppDelegate.swift */,
 				29C2D2FF2138836D00397903 /* Main.storyboard */,
 				29C2D3022138836E00397903 /* Assets.xcassets */,
 				29C2D3042138836E00397903 /* LaunchScreen.storyboard */,
-				29C2D3072138836E00397903 /* Info.plist */,
 			);
 			path = Metereader;
 			sourceTree = "<group>";
@@ -121,10 +158,35 @@
 		29C2D31421398C0400397903 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				29C2D3072138836E00397903 /* Info.plist */,
 				29C2D31D21398F0100397903 /* Constants.swift */,
 				29C2D31F21398F3900397903 /* UIColor+Theme.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		29C2D329213B2E7200397903 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				29C2D336213B2E7E00397903 /* Gotham-Black.otf */,
+				29C2D335213B2E7E00397903 /* Gotham-BlackItalic.otf */,
+				29C2D32E213B2E7E00397903 /* Gotham-Bold.otf */,
+				29C2D32C213B2E7E00397903 /* Gotham-BoldItalic.otf */,
+				29C2D338213B2E7F00397903 /* Gotham-Book.otf */,
+				29C2D337213B2E7E00397903 /* gotham-book.ttf */,
+				29C2D32B213B2E7E00397903 /* Gotham-BookItalic.otf */,
+				29C2D32F213B2E7E00397903 /* Gotham-Light.otf */,
+				29C2D32D213B2E7E00397903 /* Gotham-LightItalic.otf */,
+				29C2D331213B2E7E00397903 /* Gotham-Medium.otf */,
+				29C2D332213B2E7E00397903 /* Gotham-MediumItalic.otf */,
+				29C2D333213B2E7E00397903 /* Gotham-Thin.otf */,
+				29C2D330213B2E7E00397903 /* Gotham-ThinItalic.otf */,
+				29C2D339213B2E7F00397903 /* Gotham-Ultra.otf */,
+				29C2D33A213B2E7F00397903 /* Gotham-UltraItalic.otf */,
+				29C2D32A213B2E7E00397903 /* Gotham-XLight.otf */,
+				29C2D334213B2E7E00397903 /* Gotham-XLightItalic.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		715AA3172DA4CB13A9FF7230 /* Frameworks */ = {
@@ -197,10 +259,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C2D34A213B2E7F00397903 /* Gotham-Ultra.otf in Resources */,
+				29C2D33E213B2E7F00397903 /* Gotham-LightItalic.otf in Resources */,
+				29C2D33C213B2E7F00397903 /* Gotham-BookItalic.otf in Resources */,
+				29C2D345213B2E7F00397903 /* Gotham-XLightItalic.otf in Resources */,
 				29C2D3222139930F00397903 /* MRTextField.xib in Resources */,
 				29C2D3062138836E00397903 /* LaunchScreen.storyboard in Resources */,
+				29C2D340213B2E7F00397903 /* Gotham-Light.otf in Resources */,
+				29C2D33D213B2E7F00397903 /* Gotham-BoldItalic.otf in Resources */,
+				29C2D342213B2E7F00397903 /* Gotham-Medium.otf in Resources */,
+				29C2D34B213B2E7F00397903 /* Gotham-UltraItalic.otf in Resources */,
+				29C2D343213B2E7F00397903 /* Gotham-MediumItalic.otf in Resources */,
+				29C2D344213B2E7F00397903 /* Gotham-Thin.otf in Resources */,
 				29C2D3032138836E00397903 /* Assets.xcassets in Resources */,
+				29C2D348213B2E7F00397903 /* gotham-book.ttf in Resources */,
+				29C2D341213B2E7F00397903 /* Gotham-ThinItalic.otf in Resources */,
+				29C2D33F213B2E7F00397903 /* Gotham-Bold.otf in Resources */,
+				29C2D347213B2E7F00397903 /* Gotham-Black.otf in Resources */,
+				29C2D346213B2E7F00397903 /* Gotham-BlackItalic.otf in Resources */,
+				29C2D349213B2E7F00397903 /* Gotham-Book.otf in Resources */,
 				29C2D3012138836D00397903 /* Main.storyboard in Resources */,
+				29C2D33B213B2E7F00397903 /* Gotham-XLight.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +349,7 @@
 				29C2D2FE2138836D00397903 /* LoginViewController.swift in Sources */,
 				29C2D32021398F3900397903 /* UIColor+Theme.swift in Sources */,
 				29C2D2FC2138836D00397903 /* AppDelegate.swift in Sources */,
+				29C2D326213B25AC00397903 /* BaseViewController.swift in Sources */,
 				29C2D30F2138857000397903 /* MRTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,7 +498,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EWH85CQYYJ;
-				INFOPLIST_FILE = Metereader/Info.plist;
+				INFOPLIST_FILE = "Metereader/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -439,7 +519,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EWH85CQYYJ;
-				INFOPLIST_FILE = Metereader/Info.plist;
+				INFOPLIST_FILE = "Metereader/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

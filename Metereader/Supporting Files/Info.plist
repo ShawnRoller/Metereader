@@ -41,5 +41,25 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>UIAppFonts</key>
+    <array>
+        <string>gotham-book.ttf</string>
+        <string>gotham.ttf</string>
+        <string>Gotham-Light.otf</string>
+        <string>Gotham-Thin.otf</string>
+        <string>Gotham-XLight.otf</string>
+        <string>Gotham-Ultra.otf</string>
+        <string>Gotham-Medium.otf</string>
+        <string>Gotham-Black.otf</string>
+        <string>Gotham-BookItalic.otf</string>
+        <string>Gotham-ThinItalic.otf</string>
+        <string>Gotham-MediumItalic.otf</string>
+        <string>Gotham-BlackItalic.otf</string>
+        <string>Gotham-XLightItalic.otf</string>
+        <string>Gotham-UltraItalic.otf</string>
+        <string>Gotham-LightItalic.otf</string>
+        <string>Gotham-BoldItalic.otf</string>
+        <string>Gotham-Bold.otf</string>
+    </array>
 </dict>
 </plist>

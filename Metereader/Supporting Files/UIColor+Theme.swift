@@ -11,7 +11,7 @@ import UIKit
 extension UIColor {
     
     static func themeColor() -> UIColor {
-        return UIColor(red: 0.412, green: 0.729, blue: 0.992, alpha: 1.00)
+        return UIColor(red: 0.467, green: 0.722, blue: 0.918, alpha: 1.00)
     }
     
 }
