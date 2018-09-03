@@ -35,6 +35,9 @@
 		29C2D349213B2E7F00397903 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D338213B2E7F00397903 /* Gotham-Book.otf */; };
 		29C2D34A213B2E7F00397903 /* Gotham-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D339213B2E7F00397903 /* Gotham-Ultra.otf */; };
 		29C2D34B213B2E7F00397903 /* Gotham-UltraItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D33A213B2E7F00397903 /* Gotham-UltraItalic.otf */; };
+		29C2D34E213D82B300397903 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D34D213D82B300397903 /* HistoryViewController.swift */; };
+		29C2D356213DC5E900397903 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D354213DC5E900397903 /* HistoryTableViewCell.swift */; };
+		29C2D357213DC5E900397903 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D355213DC5E900397903 /* HistoryTableViewCell.xib */; };
 		E3A8F38BBFF1485222DD6544 /* Pods_Metereader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E77507AD7A2427E2D8B69B1 /* Pods_Metereader.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +73,9 @@
 		29C2D338213B2E7F00397903 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
 		29C2D339213B2E7F00397903 /* Gotham-Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Ultra.otf"; sourceTree = "<group>"; };
 		29C2D33A213B2E7F00397903 /* Gotham-UltraItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-UltraItalic.otf"; sourceTree = "<group>"; };
+		29C2D34D213D82B300397903 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		29C2D354213DC5E900397903 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		29C2D355213DC5E900397903 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		4028EE9BDFD0781F8D18D0B1 /* Pods-Metereader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metereader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Metereader/Pods-Metereader.debug.xcconfig"; sourceTree = "<group>"; };
 		9E77507AD7A2427E2D8B69B1 /* Pods_Metereader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Metereader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,12 +122,11 @@
 		29C2D2FA2138836D00397903 /* Metereader */ = {
 			isa = PBXGroup;
 			children = (
+				29C2D34C213D828C00397903 /* Controllers */,
 				29C2D329213B2E7200397903 /* Fonts */,
 				29C2D31421398C0400397903 /* Supporting Files */,
 				29C2D31221398A5B00397903 /* 3rd Party */,
 				29C2D30D2138852A00397903 /* 1st Party */,
-				29C2D325213B25AC00397903 /* BaseViewController.swift */,
-				29C2D2FD2138836D00397903 /* LoginViewController.swift */,
 				29C2D2FB2138836D00397903 /* AppDelegate.swift */,
 				29C2D2FF2138836D00397903 /* Main.storyboard */,
 				29C2D3022138836E00397903 /* Assets.xcassets */,
@@ -187,6 +192,26 @@
 				29C2D334213B2E7E00397903 /* Gotham-XLightItalic.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		29C2D34C213D828C00397903 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				29C2D34F213D82B800397903 /* Cells */,
+				29C2D325213B25AC00397903 /* BaseViewController.swift */,
+				29C2D2FD2138836D00397903 /* LoginViewController.swift */,
+				29C2D34D213D82B300397903 /* HistoryViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		29C2D34F213D82B800397903 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				29C2D354213DC5E900397903 /* HistoryTableViewCell.swift */,
+				29C2D355213DC5E900397903 /* HistoryTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		715AA3172DA4CB13A9FF7230 /* Frameworks */ = {
@@ -261,6 +286,7 @@
 			files = (
 				29C2D34A213B2E7F00397903 /* Gotham-Ultra.otf in Resources */,
 				29C2D33E213B2E7F00397903 /* Gotham-LightItalic.otf in Resources */,
+				29C2D357213DC5E900397903 /* HistoryTableViewCell.xib in Resources */,
 				29C2D33C213B2E7F00397903 /* Gotham-BookItalic.otf in Resources */,
 				29C2D345213B2E7F00397903 /* Gotham-XLightItalic.otf in Resources */,
 				29C2D3222139930F00397903 /* MRTextField.xib in Resources */,
@@ -344,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C2D356213DC5E900397903 /* HistoryTableViewCell.swift in Sources */,
 				29C2D31E21398F0100397903 /* Constants.swift in Sources */,
 				29C2D3112138857E00397903 /* MRButton.swift in Sources */,
 				29C2D2FE2138836D00397903 /* LoginViewController.swift in Sources */,
@@ -351,6 +378,7 @@
 				29C2D2FC2138836D00397903 /* AppDelegate.swift in Sources */,
 				29C2D326213B25AC00397903 /* BaseViewController.swift in Sources */,
 				29C2D30F2138857000397903 /* MRTextField.swift in Sources */,
+				29C2D34E213D82B300397903 /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

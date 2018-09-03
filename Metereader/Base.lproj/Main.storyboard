@@ -174,18 +174,31 @@
             </objects>
             <point key="canvasLocation" x="36" y="32.833583208395808"/>
         </scene>
-        <!--View Controller-->
+        <!--History View Controller-->
         <scene sceneID="G6h-JI-oNf">
             <objects>
-                <viewController id="Iay-k0-rgy" sceneMemberID="viewController">
+                <viewController id="Iay-k0-rgy" customClass="HistoryViewController" customModule="Metereader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZqL-TF-iQ8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0t8-eh-anT">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="i2I-FG-Fdh" firstAttribute="trailing" secondItem="0t8-eh-anT" secondAttribute="trailing" id="3wc-Ok-3Af"/>
+                            <constraint firstItem="i2I-FG-Fdh" firstAttribute="bottom" secondItem="0t8-eh-anT" secondAttribute="bottom" id="5Lm-fb-214"/>
+                            <constraint firstItem="0t8-eh-anT" firstAttribute="leading" secondItem="i2I-FG-Fdh" secondAttribute="leading" id="HvY-Ca-Rz2"/>
+                            <constraint firstItem="0t8-eh-anT" firstAttribute="top" secondItem="i2I-FG-Fdh" secondAttribute="top" id="t39-pJ-kbD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="i2I-FG-Fdh"/>
                     </view>
                     <navigationItem key="navigationItem" id="JVD-AV-z4S"/>
                     <connections>
+                        <outlet property="tableView" destination="0t8-eh-anT" id="VWc-Du-LLx"/>
                         <segue destination="xyu-IC-IIs" kind="show" id="Q8X-Ag-eMP"/>
                     </connections>
                 </viewController>
