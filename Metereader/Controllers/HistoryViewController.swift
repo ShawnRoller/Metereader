@@ -11,11 +11,15 @@ import UIKit
 class HistoryViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var dataManager: DataManagerProtocol!
     let cellID = "HistoryTableViewCell"
+    var history = [BillingHistory]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.dataManager = Constants.UI_TESTING ? MockDataManager() : DataManager()
+        getHistory(forCustomer: "test", fromDate: Date(), toDate: Date())
         setupTableView()
     }
     
@@ -28,14 +32,37 @@ class HistoryViewController: UIViewController {
 
 }
 
+// MARK: - API
+extension HistoryViewController {
+    
+    private func getHistory(forCustomer customer: String, fromDate: Date, toDate: Date) {
+        self.dataManager.getHistory(forCustomer: customer, fromDate: fromDate, toDate: toDate) { (history) in
+            guard history.count > 0 else {
+                // TODO: show error
+                return
+            }
+            self.history = history
+            self.tableView.reloadData()
+        }
+    }
+    
+}
+
 extension HistoryViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 64
+    }
     
 }
 
 extension HistoryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellID, for: indexPath) as! HistoryTableViewCell
+        let bill = self.history[indexPath.row]
+        cell.configureCell(bill)
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -43,7 +70,7 @@ extension HistoryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.history.count
     }
     
 }

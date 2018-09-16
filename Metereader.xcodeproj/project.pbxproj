@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29140D71214EA474005427BC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D70214EA474005427BC /* DataManager.swift */; };
+		29140D74214EA498005427BC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D73214EA498005427BC /* APIManager.swift */; };
+		29140D76214EA4A2005427BC /* MockAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D75214EA4A2005427BC /* MockAPIManager.swift */; };
+		29140D79214EA615005427BC /* CustomerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D78214EA615005427BC /* CustomerModels.swift */; };
+		29140D7B214EA80E005427BC /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D7A214EA80E005427BC /* MockDataManager.swift */; };
 		29C2D2FC2138836D00397903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D2FB2138836D00397903 /* AppDelegate.swift */; };
 		29C2D2FE2138836D00397903 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D2FD2138836D00397903 /* LoginViewController.swift */; };
 		29C2D3012138836D00397903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D2FF2138836D00397903 /* Main.storyboard */; };
@@ -43,6 +48,11 @@
 
 /* Begin PBXFileReference section */
 		014AB7B6319F657A0D5837FC /* Pods-Metereader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metereader.release.xcconfig"; path = "Pods/Target Support Files/Pods-Metereader/Pods-Metereader.release.xcconfig"; sourceTree = "<group>"; };
+		29140D70214EA474005427BC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		29140D73214EA498005427BC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		29140D75214EA4A2005427BC /* MockAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIManager.swift; sourceTree = "<group>"; };
+		29140D78214EA615005427BC /* CustomerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerModels.swift; sourceTree = "<group>"; };
+		29140D7A214EA80E005427BC /* MockDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
 		29C2D2F82138836D00397903 /* Metereader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metereader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C2D2FB2138836D00397903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29C2D2FD2138836D00397903 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +111,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		29140D72214EA47B005427BC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				29140D70214EA474005427BC /* DataManager.swift */,
+				29140D7A214EA80E005427BC /* MockDataManager.swift */,
+				29140D73214EA498005427BC /* APIManager.swift */,
+				29140D75214EA4A2005427BC /* MockAPIManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		29140D77214EA602005427BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				29140D78214EA615005427BC /* CustomerModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		29C2D2EF2138836C00397903 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +151,8 @@
 		29C2D2FA2138836D00397903 /* Metereader */ = {
 			isa = PBXGroup;
 			children = (
+				29140D77214EA602005427BC /* Models */,
+				29140D72214EA47B005427BC /* Utilities */,
 				29C2D34C213D828C00397903 /* Controllers */,
 				29C2D329213B2E7200397903 /* Fonts */,
 				29C2D31421398C0400397903 /* Supporting Files */,
@@ -371,9 +402,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C2D356213DC5E900397903 /* HistoryTableViewCell.swift in Sources */,
+				29140D71214EA474005427BC /* DataManager.swift in Sources */,
 				29C2D31E21398F0100397903 /* Constants.swift in Sources */,
+				29140D7B214EA80E005427BC /* MockDataManager.swift in Sources */,
 				29C2D3112138857E00397903 /* MRButton.swift in Sources */,
+				29140D74214EA498005427BC /* APIManager.swift in Sources */,
 				29C2D2FE2138836D00397903 /* LoginViewController.swift in Sources */,
+				29140D79214EA615005427BC /* CustomerModels.swift in Sources */,
+				29140D76214EA4A2005427BC /* MockAPIManager.swift in Sources */,
 				29C2D32021398F3900397903 /* UIColor+Theme.swift in Sources */,
 				29C2D2FC2138836D00397903 /* AppDelegate.swift in Sources */,
 				29C2D326213B25AC00397903 /* BaseViewController.swift in Sources */,

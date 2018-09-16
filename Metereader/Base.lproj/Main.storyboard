@@ -167,7 +167,7 @@
                         <outlet property="passwordField" destination="hnV-oy-3go" id="xic-3u-uRG"/>
                         <outlet property="selectAccountLabel" destination="ygw-WS-Uyu" id="su1-hc-b45"/>
                         <outlet property="titleImageView" destination="eFz-Tt-ll2" id="bvQ-nN-6I6"/>
-                        <segue destination="0SO-jO-XcU" kind="show" id="qn6-h7-G5F"/>
+                        <segue destination="0SO-jO-XcU" kind="show" identifier="LoginHistorySegue" id="qn6-h7-G5F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -182,7 +182,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0t8-eh-anT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0t8-eh-anT">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -199,7 +199,7 @@
                     <navigationItem key="navigationItem" id="JVD-AV-z4S"/>
                     <connections>
                         <outlet property="tableView" destination="0t8-eh-anT" id="VWc-Du-LLx"/>
-                        <segue destination="xyu-IC-IIs" kind="show" id="Q8X-Ag-eMP"/>
+                        <segue destination="xyu-IC-IIs" kind="show" identifier="HistoryCameraSegue" id="Q8X-Ag-eMP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGb-fL-FC4" userLabel="First Responder" sceneMemberID="firstResponder"/>

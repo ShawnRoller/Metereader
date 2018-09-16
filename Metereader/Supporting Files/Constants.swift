@@ -10,6 +10,12 @@ import UIKit
 
 struct Constants {
     
+    static let UI_TESTING = true
+    
+    //MARK: - Segues
+    static let loginHistorySegue = "LoginHistorySegue"
+    static let historyCameraSegue = "HistoryCameraSegue"
+    
     static func themeFont() -> String {
         return "Gotham-Book"
     }

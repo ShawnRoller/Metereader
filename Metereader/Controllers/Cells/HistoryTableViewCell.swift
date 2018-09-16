@@ -23,13 +23,17 @@ class HistoryTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.tagView.transform = CGAffineTransform(rotationAngle: -45)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    public func configureCell(_ bill: BillingHistory) {
+        self.tagView.transform = CGAffineTransform(rotationAngle: CGFloat.pi * -0.25)
+        self.totalDollarsLabel.text = "$\(bill.totalBill)"
     }
     
 }

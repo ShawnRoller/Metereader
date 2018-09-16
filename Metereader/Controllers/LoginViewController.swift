@@ -135,9 +135,14 @@ extension LoginViewController {
             self.viewState = .account
         case .account:
             self.viewState = .loading
+            performLogin()
         default:
             break
         }
+    }
+    
+    private func performLogin() {
+        self.performSegue(withIdentifier: Constants.loginHistorySegue, sender: nil)
     }
     
 }
