@@ -43,7 +43,14 @@ struct MockDataManager: DataManagerProtocol {
             history.append(bill)
         }
         
-        completion(history)
+        
+        var dateComponent = DateComponents()
+        dateComponent.month = -1
+        let dueDate = Calendar.current.date(byAdding: dateComponent, to: Date())
+        let overdueBill = BillingHistory(statementDate: Date(), paymentDate: nil, dueDate: dueDate!, totalBill: 666)
+        history.append(overdueBill)
+        
+        completion(history.sorted(by: { $1.statementDate < $0.statementDate }))
     }
     
 }

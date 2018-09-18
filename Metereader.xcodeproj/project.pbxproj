@@ -12,6 +12,7 @@
 		29140D76214EA4A2005427BC /* MockAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D75214EA4A2005427BC /* MockAPIManager.swift */; };
 		29140D79214EA615005427BC /* CustomerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D78214EA615005427BC /* CustomerModels.swift */; };
 		29140D7B214EA80E005427BC /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D7A214EA80E005427BC /* MockDataManager.swift */; };
+		29140D8021504C23005427BC /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D7F21504C23005427BC /* Date+Formatting.swift */; };
 		29C2D2FC2138836D00397903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D2FB2138836D00397903 /* AppDelegate.swift */; };
 		29C2D2FE2138836D00397903 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D2FD2138836D00397903 /* LoginViewController.swift */; };
 		29C2D3012138836D00397903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D2FF2138836D00397903 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		29140D75214EA4A2005427BC /* MockAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIManager.swift; sourceTree = "<group>"; };
 		29140D78214EA615005427BC /* CustomerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerModels.swift; sourceTree = "<group>"; };
 		29140D7A214EA80E005427BC /* MockDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
+		29140D7F21504C23005427BC /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
 		29C2D2F82138836D00397903 /* Metereader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metereader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C2D2FB2138836D00397903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29C2D2FD2138836D00397903 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		29140D7C21504BD8005427BC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				29140D7F21504C23005427BC /* Date+Formatting.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		29C2D2EF2138836C00397903 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +161,7 @@
 		29C2D2FA2138836D00397903 /* Metereader */ = {
 			isa = PBXGroup;
 			children = (
+				29140D7C21504BD8005427BC /* Extensions */,
 				29140D77214EA602005427BC /* Models */,
 				29140D72214EA47B005427BC /* Utilities */,
 				29C2D34C213D828C00397903 /* Controllers */,
@@ -409,6 +420,7 @@
 				29140D74214EA498005427BC /* APIManager.swift in Sources */,
 				29C2D2FE2138836D00397903 /* LoginViewController.swift in Sources */,
 				29140D79214EA615005427BC /* CustomerModels.swift in Sources */,
+				29140D8021504C23005427BC /* Date+Formatting.swift in Sources */,
 				29140D76214EA4A2005427BC /* MockAPIManager.swift in Sources */,
 				29C2D32021398F3900397903 /* UIColor+Theme.swift in Sources */,
 				29C2D2FC2138836D00397903 /* AppDelegate.swift in Sources */,

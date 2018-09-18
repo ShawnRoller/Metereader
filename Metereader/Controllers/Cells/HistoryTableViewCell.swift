@@ -19,6 +19,7 @@ class HistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var totalDollarsLabel: UILabel!
     
     @IBOutlet weak var payButton: UIButton!
+    @IBOutlet weak var containerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,8 +33,44 @@ class HistoryTableViewCell: UITableViewCell {
     }
     
     public func configureCell(_ bill: BillingHistory) {
+        self.totalDollarsLabel.text = bill.billString
+        self.statementDateLabel.text = bill.statementDate.toDateString()
+        if bill.paymentDate != nil {
+            configurePaid(bill)
+        }
+        else {
+            configureUnpaid(bill)
+        }
+    }
+    
+    private func configurePaid(_ bill: BillingHistory) {
+        self.tagView.isHidden = true
+        self.payButton.setTitleColor(UIColor.paidButtonColor(), for: .normal)
+        self.payButton.setTitle("Paid", for: .normal)
+        self.containerView.backgroundColor = UIColor.paidCellColor()
+    }
+    
+    private func configureUnpaid(_ bill: BillingHistory) {
+        self.tagView.isHidden = false
         self.tagView.transform = CGAffineTransform(rotationAngle: CGFloat.pi * -0.25)
-        self.totalDollarsLabel.text = "$\(bill.totalBill)"
+        
+//        let daysTilDue = bill.dueDate.difference(to: Date())
+        let daysTilDue = Date().difference(to: bill.dueDate)
+        if daysTilDue < 0 {
+            self.tagDueLabel.text = ""
+            self.tagDaysLabel.text = "Over Due"
+            self.tagView.backgroundColor = UIColor.overdueTagColor()
+        }
+        else {
+            let days = daysTilDue == 1 ? "day" : "days"
+            self.tagDueLabel.text = "due"
+            self.tagDaysLabel.text = "\(daysTilDue) \(days)"
+            self.tagView.backgroundColor = UIColor.dueTagColor()
+        }
+        
+        self.payButton.setTitleColor(UIColor.payButtonColor(), for: .normal)
+        self.payButton.setTitle("Pay", for: .normal)
+        self.containerView.backgroundColor = UIColor.unpaidCellColor()
     }
     
 }

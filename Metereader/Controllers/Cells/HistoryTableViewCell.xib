@@ -25,17 +25,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="63.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rfs-sd-vpO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="62.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJ4-gB-vq3">
                         <rect key="frame" x="-30" y="-8" width="95" height="45"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="due" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsm-Aj-dhT">
-                                <rect key="frame" x="36.5" y="17" width="22.5" height="12"/>
+                                <rect key="frame" x="35" y="17" width="23" height="12"/>
                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9g-oQ-lFE">
-                                <rect key="frame" x="22.5" y="28.5" width="50" height="14.5"/>
+                                <rect key="frame" x="21.5" y="28.5" width="50" height="14.5"/>
                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -46,8 +50,8 @@
                             <constraint firstAttribute="height" constant="45" id="2NH-6v-Mer"/>
                             <constraint firstAttribute="bottom" secondItem="c9g-oQ-lFE" secondAttribute="bottom" constant="2" id="JcR-uY-Smx"/>
                             <constraint firstAttribute="width" constant="95" id="OU0-uD-xcP"/>
-                            <constraint firstItem="c9g-oQ-lFE" firstAttribute="centerX" secondItem="EJ4-gB-vq3" secondAttribute="centerX" id="Uvl-lM-6MO"/>
-                            <constraint firstItem="Jsm-Aj-dhT" firstAttribute="centerX" secondItem="EJ4-gB-vq3" secondAttribute="centerX" id="lXo-Im-79m"/>
+                            <constraint firstItem="c9g-oQ-lFE" firstAttribute="centerX" secondItem="EJ4-gB-vq3" secondAttribute="centerX" constant="-1" id="Uvl-lM-6MO"/>
+                            <constraint firstItem="Jsm-Aj-dhT" firstAttribute="centerX" secondItem="EJ4-gB-vq3" secondAttribute="centerX" constant="-1" id="lXo-Im-79m"/>
                             <constraint firstItem="Jsm-Aj-dhT" firstAttribute="centerY" secondItem="EJ4-gB-vq3" secondAttribute="centerY" id="yVP-hV-qyh"/>
                         </constraints>
                     </view>
@@ -113,16 +117,20 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="uQT-XY-mNi" secondAttribute="bottom" id="7DF-2h-KPh"/>
+                    <constraint firstAttribute="bottom" secondItem="Rfs-sd-vpO" secondAttribute="bottom" constant="1" id="Dn8-EL-kJs"/>
                     <constraint firstItem="cqZ-7A-UuY" firstAttribute="leading" secondItem="dSE-7u-Den" secondAttribute="trailing" id="Jys-5G-tJu"/>
                     <constraint firstAttribute="bottom" secondItem="dSE-7u-Den" secondAttribute="bottom" id="LkU-7o-aWk"/>
                     <constraint firstItem="dSE-7u-Den" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="OWu-bk-JGy"/>
                     <constraint firstItem="pPr-az-fT9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RAw-jU-Yvr"/>
                     <constraint firstItem="pPr-az-fT9" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.15" id="RVm-Fi-KqQ"/>
+                    <constraint firstAttribute="trailing" secondItem="Rfs-sd-vpO" secondAttribute="trailing" id="T0Y-eC-Z0L"/>
                     <constraint firstItem="pPr-az-fT9" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" id="Vzt-Ne-pzm"/>
                     <constraint firstItem="dSE-7u-Den" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="XXN-Bo-luI"/>
+                    <constraint firstItem="Rfs-sd-vpO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="aY4-Mj-NZd"/>
                     <constraint firstItem="uQT-XY-mNi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bhD-Kw-oXI"/>
                     <constraint firstItem="uQT-XY-mNi" firstAttribute="trailing" secondItem="pPr-az-fT9" secondAttribute="leading" id="fSd-ZV-puD"/>
                     <constraint firstItem="cqZ-7A-UuY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gsA-Xu-YDS"/>
+                    <constraint firstItem="Rfs-sd-vpO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hQf-sv-VVp"/>
                     <constraint firstItem="dSE-7u-Den" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.15" id="hgP-wm-UNY"/>
                     <constraint firstAttribute="bottom" secondItem="pPr-az-fT9" secondAttribute="bottom" id="je0-hR-D3a"/>
                     <constraint firstItem="cqZ-7A-UuY" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="kJP-YC-dlQ"/>
@@ -134,6 +142,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="containerView" destination="Rfs-sd-vpO" id="9xa-2n-x7p"/>
                 <outlet property="payButton" destination="pPr-az-fT9" id="H51-LF-2tT"/>
                 <outlet property="statementDateLabel" destination="3NY-xK-kUx" id="px6-uw-RY7"/>
                 <outlet property="tagDaysLabel" destination="c9g-oQ-lFE" id="Dps-eH-Hti"/>
