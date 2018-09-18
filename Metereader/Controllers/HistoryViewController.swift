@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController {
+class HistoryViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var dataManager: DataManagerProtocol!
@@ -36,9 +36,9 @@ class HistoryViewController: UIViewController {
 extension HistoryViewController {
     
     private func getHistory(forCustomer customer: String, fromDate: Date, toDate: Date) {
-        self.dataManager.getHistory(forCustomer: customer, fromDate: fromDate, toDate: toDate) { (history) in
+        self.dataManager.getHistory(forCustomer: customer, fromDate: fromDate, toDate: toDate) { [unowned self] (history) in
             guard history.count > 0 else {
-                // TODO: show error
+                self.showAlert(message: "No data found for the range selected.  Please select a new date range.", buttonTitle: "OK")
                 return
             }
             self.history = history

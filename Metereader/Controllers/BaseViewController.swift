@@ -17,6 +17,19 @@ class BaseViewController: UIViewController {
 
 }
 
+// MARK: - Alerts
+extension BaseViewController {
+    
+    func showAlert(message: String, buttonTitle: String) {
+        let alert = UIAlertController(title: "Attention!", message: message, preferredStyle: .alert)
+        let cancelButton = UIAlertAction(title: buttonTitle, style: .cancel, handler: nil)
+        alert.addAction(cancelButton)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+}
+
+// MARK: - Customize views
 extension BaseViewController {
     
     internal func addShadow(to view: UIView) {
@@ -29,6 +42,7 @@ extension BaseViewController {
     
 }
 
+// MARK: - Spinner
 extension BaseViewController {
 
     func createSpinner(withFrame frame: CGRect) -> MMMaterialDesignSpinner {
