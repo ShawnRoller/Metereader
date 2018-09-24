@@ -11,6 +11,10 @@ import UIKit
 class HistoryViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var footerView: UIView!
+    @IBOutlet weak var cameraContainer: UIView!
+    @IBOutlet weak var cameraIcon: UIImageView!
+    
     var dataManager: DataManagerProtocol!
     let cellID = "HistoryTableViewCell"
     var history = [BillingHistory]()
@@ -20,7 +24,32 @@ class HistoryViewController: BaseViewController {
 
         self.dataManager = Constants.UI_TESTING ? MockDataManager() : DataManager()
         getHistory(forCustomer: "test", fromDate: Date(), toDate: Date())
+        setupViews()
         setupTableView()
+    }
+    
+    private func setupViews() {
+        self.footerView.backgroundColor = UIColor.footerColor()
+        self.cameraContainer.backgroundColor = UIColor.themeColor()
+        
+        let views = [self.cameraContainer, self.cameraIcon]
+        
+        // Add tappers
+        for view in views {
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(self.cameraButtonTapped(sender:)))
+            view?.addGestureRecognizer(gesture)
+            view?.isUserInteractionEnabled = true
+        }
+        
+        // Round the camera container
+        self.cameraContainer.layer.cornerRadius = self.cameraContainer.frame.width / 2
+        
+        // Nav bar
+        self.navigationController?.navigationBar.barTintColor = UIColor.themeColor()
+        self.navigationItem.title = "Statements"
+        let logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(self.logoutButtonTapped(sender:)))
+        logoutButton.tintColor = UIColor.white
+        self.navigationItem.leftBarButtonItem = logoutButton
     }
     
     private func setupTableView() {
@@ -28,8 +57,23 @@ class HistoryViewController: BaseViewController {
         self.tableView.dataSource = self
         self.tableView.allowsSelection = false
         self.tableView.register(UINib(nibName: self.cellID, bundle: nil), forCellReuseIdentifier: self.cellID)
+        let insets = UIEdgeInsetsMake(0, 0, 87, 0)
+        self.tableView.contentInset = insets
     }
 
+}
+
+// MARK: - Tappers
+extension HistoryViewController {
+    
+    @objc private func cameraButtonTapped(sender: Any) {
+        self.performSegue(withIdentifier: Constants.historyCameraSegue, sender: nil)
+    }
+    
+    @objc private func logoutButtonTapped(sender: Any) {
+        print("logged out")
+    }
+    
 }
 
 // MARK: - API

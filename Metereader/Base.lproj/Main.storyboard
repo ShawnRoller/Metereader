@@ -10,6 +10,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Light.otf">
+            <string>Gotham-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -186,18 +191,63 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6GQ-hO-URS">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idt-tT-Vjs">
+                                        <rect key="frame" x="275" y="-47" width="110" height="110"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xlL-ng-OHK">
+                                                <rect key="frame" x="31.5" y="28.5" width="47" height="47"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="47" id="V93-dO-EDF"/>
+                                                    <constraint firstAttribute="width" secondItem="xlL-ng-OHK" secondAttribute="height" id="drI-v0-2Vj"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="idt-tT-Vjs" secondAttribute="height" id="6zG-9C-93D"/>
+                                            <constraint firstAttribute="width" constant="110" id="Ft2-Ja-yS5"/>
+                                            <constraint firstItem="xlL-ng-OHK" firstAttribute="centerX" secondItem="idt-tT-Vjs" secondAttribute="centerX" id="TUF-t7-acq"/>
+                                            <constraint firstItem="xlL-ng-OHK" firstAttribute="centerY" secondItem="idt-tT-Vjs" secondAttribute="centerY" constant="-3" id="Zsu-5n-sxe"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use your camera to get your bill now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcQ-A7-hut">
+                                        <rect key="frame" x="10" y="13.5" width="265" height="14.5"/>
+                                        <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.80784313725490198" green="0.80784313725490198" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="pcQ-A7-hut" firstAttribute="centerY" secondItem="6GQ-hO-URS" secondAttribute="centerY" id="3wk-hc-bFb"/>
+                                    <constraint firstAttribute="bottom" secondItem="idt-tT-Vjs" secondAttribute="bottom" constant="-23" id="8f2-qn-x1i"/>
+                                    <constraint firstAttribute="trailing" secondItem="idt-tT-Vjs" secondAttribute="trailing" constant="-10" id="NmG-qp-mVX"/>
+                                    <constraint firstItem="idt-tT-Vjs" firstAttribute="leading" secondItem="pcQ-A7-hut" secondAttribute="trailing" id="dd7-l5-4gq"/>
+                                    <constraint firstItem="pcQ-A7-hut" firstAttribute="leading" secondItem="6GQ-hO-URS" secondAttribute="leading" constant="10" id="eUO-Fh-H4f"/>
+                                    <constraint firstAttribute="height" constant="40" id="tsV-Ml-Z6F"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="i2I-FG-Fdh" firstAttribute="trailing" secondItem="0t8-eh-anT" secondAttribute="trailing" id="3wc-Ok-3Af"/>
                             <constraint firstItem="i2I-FG-Fdh" firstAttribute="bottom" secondItem="0t8-eh-anT" secondAttribute="bottom" id="5Lm-fb-214"/>
                             <constraint firstItem="0t8-eh-anT" firstAttribute="leading" secondItem="i2I-FG-Fdh" secondAttribute="leading" id="HvY-Ca-Rz2"/>
+                            <constraint firstItem="6GQ-hO-URS" firstAttribute="trailing" secondItem="i2I-FG-Fdh" secondAttribute="trailing" id="WYK-1n-ATT"/>
+                            <constraint firstItem="6GQ-hO-URS" firstAttribute="leading" secondItem="i2I-FG-Fdh" secondAttribute="leading" id="bro-v0-Dj0"/>
+                            <constraint firstItem="i2I-FG-Fdh" firstAttribute="bottom" secondItem="6GQ-hO-URS" secondAttribute="bottom" id="qxO-hI-FEW"/>
                             <constraint firstItem="0t8-eh-anT" firstAttribute="top" secondItem="i2I-FG-Fdh" secondAttribute="top" id="t39-pJ-kbD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i2I-FG-Fdh"/>
                     </view>
                     <navigationItem key="navigationItem" id="JVD-AV-z4S"/>
                     <connections>
+                        <outlet property="cameraContainer" destination="idt-tT-Vjs" id="JI4-2l-8eG"/>
+                        <outlet property="cameraIcon" destination="xlL-ng-OHK" id="Vwj-ZG-u4P"/>
+                        <outlet property="footerView" destination="pcQ-A7-hut" id="MJY-S8-aF5"/>
                         <outlet property="tableView" destination="0t8-eh-anT" id="VWc-Du-LLx"/>
                         <segue destination="xyu-IC-IIs" kind="show" identifier="HistoryCameraSegue" id="Q8X-Ag-eMP"/>
                     </connections>
@@ -206,10 +256,10 @@
             </objects>
             <point key="canvasLocation" x="810" y="33"/>
         </scene>
-        <!--View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="6lM-Lt-NuV">
             <objects>
-                <viewController id="xyu-IC-IIs" sceneMemberID="viewController">
+                <viewController id="xyu-IC-IIs" customClass="CameraViewController" customModule="Metereader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QKq-u5-Gl1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -269,6 +319,7 @@
     <resources>
         <image name="Background" width="375" height="667"/>
         <image name="CameraButton" width="210" height="210"/>
+        <image name="CameraIcon" width="165" height="123"/>
         <image name="Logo" width="825" height="825"/>
         <image name="Mete" width="417" height="135"/>
         <image name="reader" width="549" height="135"/>

@@ -12,7 +12,7 @@ extension UIColor {
     
     // MARK: - Theme
     static func themeColor() -> UIColor {
-        return UIColor(red: 0.467, green: 0.722, blue: 0.918, alpha: 1.00)
+        return UIColor(red: 0.239, green: 0.729, blue: 1.000, alpha: 1.00)
     }
     
     // MARK: - HistoryTableViewCell
@@ -38,6 +38,11 @@ extension UIColor {
     
     static func overdueTagColor() -> UIColor {
         return UIColor(red: 1.000, green: 0.435, blue: 0.435, alpha: 1.00)
+    }
+    
+    // MARK: - HistoryViewController
+    static func footerColor() -> UIColor {
+        return UIColor(red: 0.808, green: 0.808, blue: 0.808, alpha: 1.00)
     }
     
 }

@@ -13,6 +13,7 @@
 		29140D79214EA615005427BC /* CustomerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D78214EA615005427BC /* CustomerModels.swift */; };
 		29140D7B214EA80E005427BC /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D7A214EA80E005427BC /* MockDataManager.swift */; };
 		29140D8021504C23005427BC /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D7F21504C23005427BC /* Date+Formatting.swift */; };
+		29140D82215988C5005427BC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D81215988C5005427BC /* CameraViewController.swift */; };
 		29C2D2FC2138836D00397903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D2FB2138836D00397903 /* AppDelegate.swift */; };
 		29C2D2FE2138836D00397903 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D2FD2138836D00397903 /* LoginViewController.swift */; };
 		29C2D3012138836D00397903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D2FF2138836D00397903 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		29140D78214EA615005427BC /* CustomerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerModels.swift; sourceTree = "<group>"; };
 		29140D7A214EA80E005427BC /* MockDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
 		29140D7F21504C23005427BC /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
+		29140D81215988C5005427BC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		29C2D2F82138836D00397903 /* Metereader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metereader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C2D2FB2138836D00397903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29C2D2FD2138836D00397903 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				29C2D325213B25AC00397903 /* BaseViewController.swift */,
 				29C2D2FD2138836D00397903 /* LoginViewController.swift */,
 				29C2D34D213D82B300397903 /* HistoryViewController.swift */,
+				29140D81215988C5005427BC /* CameraViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				29C2D32021398F3900397903 /* UIColor+Theme.swift in Sources */,
 				29C2D2FC2138836D00397903 /* AppDelegate.swift in Sources */,
 				29C2D326213B25AC00397903 /* BaseViewController.swift in Sources */,
+				29140D82215988C5005427BC /* CameraViewController.swift in Sources */,
 				29C2D30F2138857000397903 /* MRTextField.swift in Sources */,
 				29C2D34E213D82B300397903 /* HistoryViewController.swift in Sources */,
 			);
