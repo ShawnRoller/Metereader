@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: BaseViewController {
+class LoginViewController: BaseViewController, ContainerViewControllerProtocol {
 
     enum ViewState {
         case login
@@ -29,6 +29,9 @@ class LoginViewController: BaseViewController {
     
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var titleImageView: UIView!
+    @IBOutlet weak var popoverView: UIView!
+    
+    private var selectedAddress: [Address]?
     
     private var viewState: ViewState = .login {
         didSet { updateView(for: viewState) }
@@ -107,6 +110,7 @@ extension LoginViewController {
     private func prepareForSelecting() {
         self.overlay.backgroundColor = UIColor.black
         self.overlay.alpha = LOADING_OVERLAY_OPACITY
+        showAddressVC()
     }
     
     private func prepareForLoading() {
@@ -123,6 +127,18 @@ extension LoginViewController {
         self.view.addSubview(spinner)
         spinner.startAnimating()
     }
+    
+    private func showAddressVC() {
+        let addressVC = AddressPopoverViewController()
+        let frame = self.popoverView.frame
+        addViewController(addressVC, with: frame, from: .bottom) { (done) in
+            
+        }
+    }
+    
+    private func removeAddressVC() {
+        
+    }
 
 }
 
@@ -134,8 +150,8 @@ extension LoginViewController {
         case .login:
             self.viewState = .account
         case .account:
-            self.viewState = .loading
-            performLogin()
+            self.viewState = self.selectedAddress == nil ? .selecting : .loading
+            if self.selectedAddress != nil { performLogin() }
         default:
             break
         }

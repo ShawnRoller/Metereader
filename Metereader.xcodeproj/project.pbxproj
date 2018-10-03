@@ -45,6 +45,9 @@
 		29C2D34E213D82B300397903 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D34D213D82B300397903 /* HistoryViewController.swift */; };
 		29C2D356213DC5E900397903 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D354213DC5E900397903 /* HistoryTableViewCell.swift */; };
 		29C2D357213DC5E900397903 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D355213DC5E900397903 /* HistoryTableViewCell.xib */; };
+		29D95402216555FC00350580 /* AddressPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D95400216555FC00350580 /* AddressPopoverViewController.swift */; };
+		29D95403216555FC00350580 /* AddressPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D95401216555FC00350580 /* AddressPopoverViewController.xib */; };
+		29D9540621655A1900350580 /* ContainerViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D9540521655A1900350580 /* ContainerViewControllerProtocol.swift */; };
 		E3A8F38BBFF1485222DD6544 /* Pods_Metereader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E77507AD7A2427E2D8B69B1 /* Pods_Metereader.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +93,9 @@
 		29C2D34D213D82B300397903 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		29C2D354213DC5E900397903 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		29C2D355213DC5E900397903 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		29D95400216555FC00350580 /* AddressPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressPopoverViewController.swift; sourceTree = "<group>"; };
+		29D95401216555FC00350580 /* AddressPopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressPopoverViewController.xib; sourceTree = "<group>"; };
+		29D9540521655A1900350580 /* ContainerViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewControllerProtocol.swift; sourceTree = "<group>"; };
 		4028EE9BDFD0781F8D18D0B1 /* Pods-Metereader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metereader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Metereader/Pods-Metereader.debug.xcconfig"; sourceTree = "<group>"; };
 		9E77507AD7A2427E2D8B69B1 /* Pods_Metereader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Metereader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -163,6 +169,7 @@
 		29C2D2FA2138836D00397903 /* Metereader */ = {
 			isa = PBXGroup;
 			children = (
+				29D9540421655A0200350580 /* Protocols */,
 				29140D7C21504BD8005427BC /* Extensions */,
 				29140D77214EA602005427BC /* Models */,
 				29140D72214EA47B005427BC /* Utilities */,
@@ -246,6 +253,8 @@
 				29C2D2FD2138836D00397903 /* LoginViewController.swift */,
 				29C2D34D213D82B300397903 /* HistoryViewController.swift */,
 				29140D81215988C5005427BC /* CameraViewController.swift */,
+				29D95400216555FC00350580 /* AddressPopoverViewController.swift */,
+				29D95401216555FC00350580 /* AddressPopoverViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -257,6 +266,14 @@
 				29C2D355213DC5E900397903 /* HistoryTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		29D9540421655A0200350580 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				29D9540521655A1900350580 /* ContainerViewControllerProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		715AA3172DA4CB13A9FF7230 /* Frameworks */ = {
@@ -331,6 +348,7 @@
 			files = (
 				29C2D34A213B2E7F00397903 /* Gotham-Ultra.otf in Resources */,
 				29C2D33E213B2E7F00397903 /* Gotham-LightItalic.otf in Resources */,
+				29D95403216555FC00350580 /* AddressPopoverViewController.xib in Resources */,
 				29C2D357213DC5E900397903 /* HistoryTableViewCell.xib in Resources */,
 				29C2D33C213B2E7F00397903 /* Gotham-BookItalic.otf in Resources */,
 				29C2D345213B2E7F00397903 /* Gotham-XLightItalic.otf in Resources */,
@@ -424,8 +442,10 @@
 				29C2D2FE2138836D00397903 /* LoginViewController.swift in Sources */,
 				29140D79214EA615005427BC /* CustomerModels.swift in Sources */,
 				29140D8021504C23005427BC /* Date+Formatting.swift in Sources */,
+				29D95402216555FC00350580 /* AddressPopoverViewController.swift in Sources */,
 				29140D76214EA4A2005427BC /* MockAPIManager.swift in Sources */,
 				29C2D32021398F3900397903 /* UIColor+Theme.swift in Sources */,
+				29D9540621655A1900350580 /* ContainerViewControllerProtocol.swift in Sources */,
 				29C2D2FC2138836D00397903 /* AppDelegate.swift in Sources */,
 				29C2D326213B25AC00397903 /* BaseViewController.swift in Sources */,
 				29140D82215988C5005427BC /* CameraViewController.swift in Sources */,

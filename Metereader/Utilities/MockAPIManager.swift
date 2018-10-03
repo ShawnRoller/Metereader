@@ -15,4 +15,8 @@ struct MockAPIManager: APIManagerProtocol {
         
     }
     
+    func getAddresses(postData: [AnyHashable: Any], completion: @escaping (_ response: [AnyHashable: Any]) -> Void) {
+        
+    }
+    
 }

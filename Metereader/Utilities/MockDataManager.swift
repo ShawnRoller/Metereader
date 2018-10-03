@@ -10,6 +10,11 @@ import Foundation
 
 struct MockDataManager: DataManagerProtocol {
     
+    func getAddresses(forCustomer customer: String, completion: @escaping ([Address]) -> Void) {
+        
+    }
+    
+    
     func getHistory(forCustomer customer: String, fromDate: Date, toDate: Date, completion: @escaping (_ response: [BillingHistory]) -> Void) {
         var history = [BillingHistory]()
         

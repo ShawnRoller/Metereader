@@ -9,10 +9,12 @@ import Foundation
 
 protocol APIManagerProtocol {
     func getHistory(postData: [AnyHashable: Any], completion: @escaping (_ response: [AnyHashable: Any]) -> Void)
+    func getAddresses(postData: [AnyHashable: Any], completion: @escaping (_ response: [AnyHashable: Any]) -> Void)
 }
 
 protocol DataManagerProtocol {
     func getHistory(forCustomer customer: String, fromDate: Date, toDate: Date, completion: @escaping (_ response: [BillingHistory]) -> Void)
+    func getAddresses(forCustomer customer: String, completion: @escaping (_ response: [Address]) -> Void)
 }
 
 struct DataManager: DataManagerProtocol {
@@ -21,6 +23,12 @@ struct DataManager: DataManagerProtocol {
     
     public func getHistory(forCustomer customer: String, fromDate: Date, toDate: Date, completion: @escaping (_ response: [BillingHistory]) -> Void) {
         self.apiManager.getHistory(postData: [:]) { (response) in
+            
+        }
+    }
+    
+    func getAddresses(forCustomer customer: String, completion: @escaping (_ response: [Address]) -> Void) {
+        self.apiManager.getAddresses(postData: [:]) { (response) in
             
         }
     }
