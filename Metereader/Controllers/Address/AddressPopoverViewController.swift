@@ -10,6 +10,8 @@ import UIKit
 
 class AddressPopoverViewController: UIViewController {
 
+    private let cellID = "AddressTableViewCell"
+    
     // TODO: custom initializer for setting these properties
     public var delegate: LoginDelegate?
     public var addresses: [Address]!
@@ -24,6 +26,8 @@ class AddressPopoverViewController: UIViewController {
     private func setupTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        self.tableView.register(UINib(nibName: self.cellID, bundle: nil), forCellReuseIdentifier: self.cellID)
     }
 }
 
@@ -34,6 +38,10 @@ extension AddressPopoverViewController: UITableViewDelegate {
         guard self.addresses.count > indexPath.row else { return }
         self.delegate?.selectAddress(self.addresses[indexPath.row])
         self.delegate?.dismissAddressVC()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70.0
     }
     
 }
@@ -50,8 +58,8 @@ extension AddressPopoverViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = addresses[indexPath.row].nickname
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellID, for: indexPath) as! AddressTableViewCell
+        cell.titleLabel?.text = addresses[indexPath.row].nickname
         return cell
     }
     
