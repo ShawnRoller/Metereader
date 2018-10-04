@@ -27,3 +27,12 @@ struct BillingHistory {
     }
 }
 
+struct Address {
+    var nickname: String
+    var address1: String
+    var address2: String
+    var city: String
+    var state: String
+    var zip: String
+    var country: String
+}

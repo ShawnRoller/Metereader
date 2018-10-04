@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
+        </array>
         <array key="Gotham-Light.otf">
             <string>Gotham-Light</string>
         </array>
@@ -63,34 +65,8 @@
                                     <constraint firstAttribute="bottom" secondItem="7o6-Gx-bra" secondAttribute="bottom" id="qYB-vr-Hzc"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zgo-Af-e8h" customClass="MRTextField" customModule="Metereader" customModuleProvider="target">
-                                <rect key="frame" x="57.5" y="424" width="260" height="50"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email@email.com" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cmB-D1-fle" customClass="MRTextField" customModule="Metereader" customModuleProvider="target">
-                                <rect key="frame" x="57.5" y="354" width="260" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="ZrI-RN-cp4"/>
-                                    <constraint firstAttribute="width" constant="260" id="kSo-9R-A3a"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="hnV-oy-3go" customClass="MRTextField" customModule="Metereader" customModuleProvider="target">
-                                <rect key="frame" x="57.5" y="424" width="260" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0gK-xb-nj3"/>
-                                    <constraint firstAttribute="width" constant="260" id="Zkh-Ld-qzs"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjP-Wn-FuH" customClass="MRButton" customModule="Metereader" customModuleProvider="target">
-                                <rect key="frame" x="57" y="514" width="260" height="50"/>
+                                <rect key="frame" x="57.5" y="514" width="260" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="Ulx-ku-jbS"/>
                                     <constraint firstAttribute="height" constant="50" id="zeh-Kc-aE2"/>
@@ -101,7 +77,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Account..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygw-WS-Uyu">
-                                <rect key="frame" x="122" y="395" width="130" height="21"/>
+                                <rect key="frame" x="122.5" y="395" width="130" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -130,6 +106,40 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkv-dl-9Tq">
+                                <rect key="frame" x="49.5" y="138.5" width="276" height="390"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="390" id="Md2-Fj-IHe"/>
+                                    <constraint firstAttribute="width" constant="276" id="pmQ-Cs-0Oz"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email@email.com" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cmB-D1-fle" customClass="MRTextField" customModule="Metereader" customModuleProvider="target">
+                                <rect key="frame" x="57.5" y="354" width="260" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ZrI-RN-cp4"/>
+                                    <constraint firstAttribute="width" constant="260" id="kSo-9R-A3a"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="hnV-oy-3go" customClass="MRTextField" customModule="Metereader" customModuleProvider="target">
+                                <rect key="frame" x="57.5" y="424" width="260" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0gK-xb-nj3"/>
+                                    <constraint firstAttribute="width" constant="260" id="Zkh-Ld-qzs"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="zgo-Af-e8h" customClass="MRTextField" customModule="Metereader" customModuleProvider="target">
+                                <rect key="frame" x="57.5" y="424" width="260" height="50"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -138,6 +148,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PF4-QD-K6x" secondAttribute="trailing" id="6Uj-4R-a0t"/>
                             <constraint firstItem="PF4-QD-K6x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bjg-lR-kBN"/>
                             <constraint firstItem="zgo-Af-e8h" firstAttribute="centerY" secondItem="hnV-oy-3go" secondAttribute="centerY" id="KgU-qB-hEo"/>
+                            <constraint firstItem="hkv-dl-9Tq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LWz-2S-bja"/>
                             <constraint firstItem="PF4-QD-K6x" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MOA-yW-Dop"/>
                             <constraint firstItem="zgo-Af-e8h" firstAttribute="width" secondItem="hnV-oy-3go" secondAttribute="width" id="N7u-Qg-CRk"/>
                             <constraint firstItem="Y9j-Nu-JTT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NFa-2W-pBf"/>
@@ -149,6 +160,7 @@
                             <constraint firstItem="ftA-O0-0bt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cig-0D-e4f"/>
                             <constraint firstItem="DjP-Wn-FuH" firstAttribute="top" secondItem="hnV-oy-3go" secondAttribute="bottom" constant="40" id="eAc-8i-dGp"/>
                             <constraint firstItem="hnV-oy-3go" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eMO-ZC-Pbu"/>
+                            <constraint firstItem="hkv-dl-9Tq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ega-vy-9K1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ftA-O0-0bt" secondAttribute="trailing" id="flf-0t-yIT"/>
                             <constraint firstItem="cmB-D1-fle" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jeh-Iy-7k6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vrx-PK-h20" secondAttribute="bottom" id="jja-iB-tMG"/>
@@ -170,6 +182,7 @@
                         <outlet property="logoImageView" destination="Y9j-Nu-JTT" id="grP-Ah-4Oo"/>
                         <outlet property="overlay" destination="PF4-QD-K6x" id="Vm9-r3-Qxs"/>
                         <outlet property="passwordField" destination="hnV-oy-3go" id="xic-3u-uRG"/>
+                        <outlet property="popoverView" destination="hkv-dl-9Tq" id="Pxk-E4-MFB"/>
                         <outlet property="selectAccountLabel" destination="ygw-WS-Uyu" id="su1-hc-b45"/>
                         <outlet property="titleImageView" destination="eFz-Tt-ll2" id="bvQ-nN-6I6"/>
                         <segue destination="0SO-jO-XcU" kind="show" identifier="LoginHistorySegue" id="qn6-h7-G5F"/>
@@ -214,7 +227,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use your camera to get your bill now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcQ-A7-hut">
-                                        <rect key="frame" x="10" y="13.5" width="265" height="14.5"/>
+                                        <rect key="frame" x="10" y="13" width="265" height="14.5"/>
                                         <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -268,7 +281,7 @@
                                 <rect key="frame" x="0.0" y="587" width="375" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9k-j5-YSj">
-                                        <rect key="frame" x="152" y="5" width="70" height="70"/>
+                                        <rect key="frame" x="152.5" y="5" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="b9k-j5-YSj" secondAttribute="height" multiplier="1:1" id="Cz3-tC-kX8"/>
                                         </constraints>

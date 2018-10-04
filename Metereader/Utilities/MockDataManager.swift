@@ -10,6 +10,16 @@ import Foundation
 
 struct MockDataManager: DataManagerProtocol {
     
+    func getAddresses(forCustomer customer: String, completion: @escaping ([Address]) -> Void) {
+        var addresses = [Address]()
+        for i in 1...10 {
+            let address = Address(nickname: "Address\(i)", address1: "\(i) Elm St", address2: "", city: "Nightmare", state: "OK", zip: "0800\(i)", country: "GB")
+            addresses.append(address)
+        }
+        completion(addresses)
+    }
+    
+    
     func getHistory(forCustomer customer: String, fromDate: Date, toDate: Date, completion: @escaping (_ response: [BillingHistory]) -> Void) {
         var history = [BillingHistory]()
         

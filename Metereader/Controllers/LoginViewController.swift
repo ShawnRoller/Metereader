@@ -8,7 +8,12 @@
 
 import UIKit
 
-class LoginViewController: BaseViewController {
+protocol LoginDelegate {
+    func selectAddress(_ address: Address)
+    func dismissAddressVC()
+}
+
+class LoginViewController: BaseViewController, ContainerViewControllerProtocol {
 
     enum ViewState {
         case login
@@ -29,6 +34,16 @@ class LoginViewController: BaseViewController {
     
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var titleImageView: UIView!
+    @IBOutlet weak var popoverView: UIView!
+    
+    private var addresses: [Address]?
+    private var selectedAddress: Address? {
+        didSet {
+            self.accountField.text = selectedAddress?.nickname ?? ""
+        }
+    }
+    private var dataManager: DataManagerProtocol!
+    private var addressVC: AddressPopoverViewController?
     
     private var viewState: ViewState = .login {
         didSet { updateView(for: viewState) }
@@ -43,6 +58,7 @@ extension LoginViewController {
         super.viewDidLoad()
         
         self.viewState = .login
+        self.dataManager = Constants.UI_TESTING ? MockDataManager() : DataManager()
     }
     
     override func viewDidLayoutSubviews() {
@@ -62,6 +78,12 @@ extension LoginViewController {
         self.addShadow(to: self.accountField)
         self.addShadow(to: self.loginButton)
         self.addShadow(to: self.emailField)
+        
+        // Colors
+        self.accountField.textColor = UIColor.accountFieldTextColor()
+        
+        // Delegates
+        self.accountField.delegate = self
     }
     
     private func updateView(for state: ViewState) {
@@ -107,6 +129,7 @@ extension LoginViewController {
     private func prepareForSelecting() {
         self.overlay.backgroundColor = UIColor.black
         self.overlay.alpha = LOADING_OVERLAY_OPACITY
+        showAddressVC()
     }
     
     private func prepareForLoading() {
@@ -123,6 +146,26 @@ extension LoginViewController {
         self.view.addSubview(spinner)
         spinner.startAnimating()
     }
+    
+    private func showAddressVC() {
+        self.addressVC = AddressPopoverViewController()
+        self.addressVC?.delegate = self
+        self.addressVC?.addresses = self.addresses
+        self.addressVC?.view.layer.cornerRadius = 8
+        self.addressVC?.view.layer.masksToBounds = true
+        let frame = self.popoverView.frame
+        guard let addressVC = self.addressVC else { return }
+        addViewController(addressVC, with: frame, from: .bottom) { (done) in
+            
+        }
+    }
+    
+    private func removeAddressVC() {
+        guard let addressVC = self.addressVC else { return }
+        removeViewController(addressVC, to: .bottom) { (_) in
+            self.addressVC = nil
+        }
+    }
 
 }
 
@@ -132,9 +175,9 @@ extension LoginViewController {
     @IBAction func loginButtonTapped(sender: UIButton) {
         switch self.viewState {
         case .login:
-            self.viewState = .account
-        case .account:
             self.viewState = .loading
+            getAddresses(forCustomer: self.emailField.text ?? "")
+        case .account:
             performLogin()
         default:
             break
@@ -147,3 +190,45 @@ extension LoginViewController {
     
 }
 
+// MARK: - LoginDelegate
+extension LoginViewController: LoginDelegate {
+    
+    func selectAddress(_ address: Address) {
+        self.selectedAddress = address
+    }
+    
+    func dismissAddressVC() {
+        removeAddressVC()
+        self.viewState = .account
+    }
+}
+
+// MARK: - API
+extension LoginViewController {
+    
+    private func getAddresses(forCustomer customer: String) {
+        self.dataManager.getAddresses(forCustomer: customer) { [unowned self] (addresses) in
+            guard addresses.count > 0 else {
+                // TODO: handle error
+                return
+            }
+            self.addresses = addresses
+            self.selectedAddress = addresses[0]
+            self.viewState = .account
+        }
+    }
+    
+}
+
+// MARK: - UITextFieldDelegate
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if let addresses = self.addresses, addresses.count > 0 {
+            self.viewState = .selecting
+        }
+        return false
+    }
+    
+    
+}
