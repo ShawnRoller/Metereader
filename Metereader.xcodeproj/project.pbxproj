@@ -249,12 +249,11 @@
 		29C2D34C213D828C00397903 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				29D954102166742400350580 /* Camera */,
+				29D9540F2166741B00350580 /* History */,
+				29D9540E2166741300350580 /* Login */,
+				29D9540D2166740900350580 /* Base */,
 				29D954072166727200350580 /* Address */,
-				29C2D34F213D82B800397903 /* Cells */,
-				29C2D325213B25AC00397903 /* BaseViewController.swift */,
-				29C2D2FD2138836D00397903 /* LoginViewController.swift */,
-				29C2D34D213D82B300397903 /* HistoryViewController.swift */,
-				29140D81215988C5005427BC /* CameraViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -293,6 +292,39 @@
 				29D9540A2166729200350580 /* AddressTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		29D9540D2166740900350580 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				29C2D325213B25AC00397903 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		29D9540E2166741300350580 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				29C2D2FD2138836D00397903 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		29D9540F2166741B00350580 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				29C2D34F213D82B800397903 /* Cells */,
+				29C2D34D213D82B300397903 /* HistoryViewController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		29D954102166742400350580 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				29140D81215988C5005427BC /* CameraViewController.swift */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 		715AA3172DA4CB13A9FF7230 /* Frameworks */ = {
