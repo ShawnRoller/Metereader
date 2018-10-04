@@ -15,6 +15,11 @@ extension UIColor {
         return UIColor(red: 0.239, green: 0.729, blue: 1.000, alpha: 1.00)
     }
     
+    // MARK: - Login
+    static func accountFieldTextColor() -> UIColor {
+        return UIColor(red: 0.580, green: 0.655, blue: 0.729, alpha: 1.00)
+    }
+    
     // MARK: - HistoryTableViewCell
     static func unpaidCellColor() -> UIColor {
         return UIColor(red: 0.953, green: 0.953, blue: 0.953, alpha: 1.00)

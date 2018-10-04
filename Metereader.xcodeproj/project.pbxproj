@@ -23,7 +23,6 @@
 		29C2D3112138857E00397903 /* MRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D3102138857E00397903 /* MRButton.swift */; };
 		29C2D31E21398F0100397903 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D31D21398F0100397903 /* Constants.swift */; };
 		29C2D32021398F3900397903 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D31F21398F3900397903 /* UIColor+Theme.swift */; };
-		29C2D3222139930F00397903 /* MRTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D3212139930F00397903 /* MRTextField.xib */; };
 		29C2D326213B25AC00397903 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D325213B25AC00397903 /* BaseViewController.swift */; };
 		29C2D33B213B2E7F00397903 /* Gotham-XLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D32A213B2E7E00397903 /* Gotham-XLight.otf */; };
 		29C2D33C213B2E7F00397903 /* Gotham-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D32B213B2E7E00397903 /* Gotham-BookItalic.otf */; };
@@ -71,7 +70,6 @@
 		29C2D3102138857E00397903 /* MRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRButton.swift; sourceTree = "<group>"; };
 		29C2D31D21398F0100397903 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		29C2D31F21398F3900397903 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
-		29C2D3212139930F00397903 /* MRTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MRTextField.xib; sourceTree = "<group>"; };
 		29C2D325213B25AC00397903 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		29C2D32A213B2E7E00397903 /* Gotham-XLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-XLight.otf"; sourceTree = "<group>"; };
 		29C2D32B213B2E7E00397903 /* Gotham-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BookItalic.otf"; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 			children = (
 				29C2D30E2138857000397903 /* MRTextField.swift */,
 				29C2D3102138857E00397903 /* MRButton.swift */,
-				29C2D3212139930F00397903 /* MRTextField.xib */,
 			);
 			path = "1st Party";
 			sourceTree = "<group>";
@@ -352,7 +349,6 @@
 				29C2D357213DC5E900397903 /* HistoryTableViewCell.xib in Resources */,
 				29C2D33C213B2E7F00397903 /* Gotham-BookItalic.otf in Resources */,
 				29C2D345213B2E7F00397903 /* Gotham-XLightItalic.otf in Resources */,
-				29C2D3222139930F00397903 /* MRTextField.xib in Resources */,
 				29C2D3062138836E00397903 /* LaunchScreen.storyboard in Resources */,
 				29C2D340213B2E7F00397903 /* Gotham-Light.otf in Resources */,
 				29C2D33D213B2E7F00397903 /* Gotham-BoldItalic.otf in Resources */,

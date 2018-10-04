@@ -10,19 +10,31 @@ import UIKit
 
 class AddressPopoverViewController: UIViewController {
 
+    // TODO: custom initializer for setting these properties
+    public var delegate: LoginDelegate?
+    public var addresses: [Address]!
+    
     @IBOutlet weak var tableView: UITableView!
-    private var addresses: [Address]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
     }
     
-    
-
+    private func setupTableView() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
 }
 
 // MARK: - UITableViewDelegate
 extension AddressPopoverViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard self.addresses.count > indexPath.row else { return }
+        self.delegate?.selectAddress(self.addresses[indexPath.row])
+        self.delegate?.dismissAddressVC()
+    }
     
 }
 
@@ -34,11 +46,13 @@ extension AddressPopoverViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.addresses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = UITableViewCell()
+        cell.textLabel?.text = addresses[indexPath.row].nickname
+        return cell
     }
     
 }
