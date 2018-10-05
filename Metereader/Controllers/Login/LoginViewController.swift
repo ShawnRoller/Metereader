@@ -36,6 +36,8 @@ class LoginViewController: BaseViewController, ContainerViewControllerProtocol {
     @IBOutlet weak var titleImageView: UIView!
     @IBOutlet weak var popoverView: UIView!
     
+    private var initialLoad = true
+    
     private var addresses: [Address]?
     private var selectedAddress: Address? {
         didSet {
@@ -56,9 +58,16 @@ extension LoginViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.viewState = .login
         self.dataManager = Constants.UI_TESTING ? MockDataManager() : DataManager()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if self.initialLoad {
+            self.initialLoad = false
+            initialViewSetup()
+            animateLogo()
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -103,39 +112,36 @@ extension LoginViewController {
     private func prepareForLogin() {
         // Ensure the unused elements are hidden
         removeSpinner()
-        self.overlay.alpha = 0
-        self.selectAccountLabel.alpha = 0
-        self.accountField.alpha = 0
         
-        // Ensure the necessary elements are visible
-        self.passwordField.alpha = 1
-        self.emailField.alpha = 1
-        self.loginButton.setTitle("Login", for: .normal)
+        animateOut([self.overlay, self.selectAccountLabel, self.accountField]) { [unowned self] (_) in
+            self.loginButton.setTitle("Login", for: .normal)
+            self.animateIn([self.passwordField, self.emailField, self.loginButton], alpha: 1, duration: 1, completion: nil)
+        }
     }
     
     private func prepareForAccount() {
-        // Ensure the unused elements are hidden
-        self.removeSpinner()
-        self.passwordField.alpha = 0
-        self.emailField.alpha = 0
-        self.overlay.alpha = 0
-        
-        // Ensure the necessary elements are visible
-        self.selectAccountLabel.alpha = 1
-        self.accountField.alpha = 1
-        self.loginButton.setTitle("Submit", for: .normal)
+        animateOut([self.passwordField, self.emailField, self.overlay]) { [unowned self] (_) in
+            self.removeSpinner()
+            self.loginButton.setTitle("Submit", for: .normal)
+            
+            // Animate the new fields in
+            self.animateIn([self.selectAccountLabel, self.accountField], alpha: 1, duration: 1, completion: nil)
+        }
     }
     
     private func prepareForSelecting() {
         self.overlay.backgroundColor = UIColor.black
-        self.overlay.alpha = LOADING_OVERLAY_OPACITY
-        showAddressVC()
+        animateIn([self.overlay], alpha: LOADING_OVERLAY_OPACITY, duration: 0.2) { [unowned self] (_) in
+            self.showAddressVC()
+        }
     }
     
     private func prepareForLoading() {
         self.overlay.backgroundColor = UIColor.white
-        self.overlay.alpha = LOADING_OVERLAY_OPACITY
-        createSpinner()
+        animateIn([self.overlay], alpha: LOADING_OVERLAY_OPACITY, duration: 0.2) { [unowned self] (_) in
+            self.createSpinner()
+        }
+        
     }
     
     private func createSpinner() {
@@ -167,6 +173,63 @@ extension LoginViewController {
         }
     }
 
+}
+
+// MARK: - Animations
+extension LoginViewController {
+    
+    private func initialViewSetup() {
+        // Scale the logo up
+        let logoScale = CGAffineTransform(scaleX: 4, y: 4)
+        self.logoImageView.transform = logoScale
+        self.logoImageView.alpha = 0.25
+        
+        // Move the title out initially
+        let titleTranslation = CGAffineTransform(translationX: self.view.frame.width * -1, y: 0)
+        self.titleImageView.transform = titleTranslation
+        
+        // Fade the text fields and buttons out initially
+        self.loginButton.alpha = 0
+        self.emailField.alpha = 0
+        self.passwordField.alpha = 0
+        self.accountField.alpha = 0
+        self.selectAccountLabel.alpha = 0
+        self.overlay.alpha = 0
+    }
+    
+    private func animateLogo() {
+        UIView.animate(withDuration: 1.25, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+            // Move the logo in
+            self.logoImageView.transform = CGAffineTransform.identity
+            self.logoImageView.alpha = 1
+            
+            // Move the title in
+            self.titleImageView.transform = CGAffineTransform.identity
+        }) { [unowned self] (done) in
+            self.viewState = .login
+        }
+    }
+    
+    private func animateIn(_ views: [UIView], alpha: CGFloat, duration: TimeInterval, completion: ((_ done: Bool) -> Void)?) {
+        UIView.animate(withDuration: duration, animations: {
+            for view in views {
+                view.alpha = alpha
+            }
+        }) { (done) in
+            completion?(true)
+        }
+    }
+    
+    private func animateOut(_ views: [UIView], completion: ((_ done: Bool) -> Void)?) {
+        UIView.animate(withDuration: 1, animations: {
+            for view in views {
+                view.alpha = 0
+            }
+        }) { (done) in
+            completion?(true)
+        }
+    }
+    
 }
 
 // MARK: - Tappers
