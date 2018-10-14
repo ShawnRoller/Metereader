@@ -69,6 +69,19 @@ extension CameraViewController {
             }
         }
     }
+    
+    private func processImage(_ image: UIImage?) {
+        guard let image = image else {
+            showAlert(message: "Something went wrong. Please try to capture the image again.", buttonTitle: "OK")
+            return
+        }
+        performSegue(withIdentifier: Constants.CameraImageAnalyzerSegue, sender: image)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? ImageAnalyzerViewController, let image = sender as? UIImage else { return }
+        destination.capturedImage = image
+    }
 
 }
 
@@ -78,7 +91,7 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         guard let imageData = photo.fileDataRepresentation() else { return }
         let image = UIImage(data: imageData)
-        // TODO: handle and analyze the captured image
+        processImage(image)
     }
     
 }
