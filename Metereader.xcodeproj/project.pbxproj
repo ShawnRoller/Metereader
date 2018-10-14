@@ -49,6 +49,8 @@
 		29D9540621655A1900350580 /* ContainerViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D9540521655A1900350580 /* ContainerViewControllerProtocol.swift */; };
 		29D9540B2166729200350580 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D954092166729200350580 /* AddressTableViewCell.swift */; };
 		29D9540C2166729200350580 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D9540A2166729200350580 /* AddressTableViewCell.xib */; };
+		29E9C8332173980300CF590F /* ImageAnalyzerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E9C8322173980300CF590F /* ImageAnalyzerViewController.swift */; };
+		29E9C8352173981B00CF590F /* MeterCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E9C8342173981B00CF590F /* MeterCaptureViewController.swift */; };
 		E3A8F38BBFF1485222DD6544 /* Pods_Metereader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E77507AD7A2427E2D8B69B1 /* Pods_Metereader.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +100,8 @@
 		29D9540521655A1900350580 /* ContainerViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewControllerProtocol.swift; sourceTree = "<group>"; };
 		29D954092166729200350580 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		29D9540A2166729200350580 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		29E9C8322173980300CF590F /* ImageAnalyzerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalyzerViewController.swift; sourceTree = "<group>"; };
+		29E9C8342173981B00CF590F /* MeterCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterCaptureViewController.swift; sourceTree = "<group>"; };
 		4028EE9BDFD0781F8D18D0B1 /* Pods-Metereader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metereader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Metereader/Pods-Metereader.debug.xcconfig"; sourceTree = "<group>"; };
 		9E77507AD7A2427E2D8B69B1 /* Pods_Metereader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Metereader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -249,6 +253,8 @@
 		29C2D34C213D828C00397903 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				29E9C831217397E200CF590F /* Meter Capture */,
+				29E9C830217397D500CF590F /* Image Analyzer */,
 				29D954102166742400350580 /* Camera */,
 				29D9540F2166741B00350580 /* History */,
 				29D9540E2166741300350580 /* Login */,
@@ -325,6 +331,22 @@
 				29140D81215988C5005427BC /* CameraViewController.swift */,
 			);
 			path = Camera;
+			sourceTree = "<group>";
+		};
+		29E9C830217397D500CF590F /* Image Analyzer */ = {
+			isa = PBXGroup;
+			children = (
+				29E9C8322173980300CF590F /* ImageAnalyzerViewController.swift */,
+			);
+			path = "Image Analyzer";
+			sourceTree = "<group>";
+		};
+		29E9C831217397E200CF590F /* Meter Capture */ = {
+			isa = PBXGroup;
+			children = (
+				29E9C8342173981B00CF590F /* MeterCaptureViewController.swift */,
+			);
+			path = "Meter Capture";
 			sourceTree = "<group>";
 		};
 		715AA3172DA4CB13A9FF7230 /* Frameworks */ = {
@@ -488,12 +510,14 @@
 				29140D71214EA474005427BC /* DataManager.swift in Sources */,
 				29C2D31E21398F0100397903 /* Constants.swift in Sources */,
 				29140D7B214EA80E005427BC /* MockDataManager.swift in Sources */,
+				29E9C8332173980300CF590F /* ImageAnalyzerViewController.swift in Sources */,
 				29C2D3112138857E00397903 /* MRButton.swift in Sources */,
 				29140D74214EA498005427BC /* APIManager.swift in Sources */,
 				29C2D2FE2138836D00397903 /* LoginViewController.swift in Sources */,
 				29140D79214EA615005427BC /* CustomerModels.swift in Sources */,
 				29140D8021504C23005427BC /* Date+Formatting.swift in Sources */,
 				29D95402216555FC00350580 /* AddressPopoverViewController.swift in Sources */,
+				29E9C8352173981B00CF590F /* MeterCaptureViewController.swift in Sources */,
 				29D9540B2166729200350580 /* AddressTableViewCell.swift in Sources */,
 				29140D76214EA4A2005427BC /* MockAPIManager.swift in Sources */,
 				29C2D32021398F3900397903 /* UIColor+Theme.swift in Sources */,

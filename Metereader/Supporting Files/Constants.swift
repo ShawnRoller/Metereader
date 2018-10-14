@@ -15,6 +15,8 @@ struct Constants {
     //MARK: - Segues
     static let loginHistorySegue = "LoginHistorySegue"
     static let historyCameraSegue = "HistoryCameraSegue"
+    static let CameraImageAnalyzerSegue = "CameraImageAnalyzerSegue"
+    static let ImageAnalyzerMeterCaptureSegue = "ImageAnalyzerMeterCaptureSegue"
     
     static func themeFont() -> String {
         return "Gotham-Book"
