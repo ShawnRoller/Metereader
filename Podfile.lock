@@ -1,12 +1,18 @@
 PODS:
+  - GPUImage (0.1.7)
   - MMMaterialDesignSpinner (0.2.5)
+  - SwiftOCR (1.1):
+    - GPUImage
 
 DEPENDENCIES:
   - MMMaterialDesignSpinner
+  - SwiftOCR
 
 SPEC CHECKSUMS:
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   MMMaterialDesignSpinner: a548042720c2e5f04212048483085d7942ac3e81
+  SwiftOCR: e1a5c7582f074b54df2b1ad273983088b3cf5d45
 
-PODFILE CHECKSUM: 5a8e7c1304f7a6cb3673955bdae2f492fdf11ac4
+PODFILE CHECKSUM: 71a724b10d00228239b5495d93c653aa440db6e2
 
 COCOAPODS: 1.4.0

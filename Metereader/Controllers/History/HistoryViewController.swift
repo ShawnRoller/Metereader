@@ -57,7 +57,7 @@ class HistoryViewController: BaseViewController {
         self.tableView.dataSource = self
         self.tableView.allowsSelection = false
         self.tableView.register(UINib(nibName: self.cellID, bundle: nil), forCellReuseIdentifier: self.cellID)
-        let insets = UIEdgeInsetsMake(0, 0, 87, 0)
+        let insets = UIEdgeInsets(top: 0, left: 0, bottom: 87, right: 0)
         self.tableView.contentInset = insets
     }
 

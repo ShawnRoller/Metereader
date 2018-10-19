@@ -8,12 +8,14 @@
 
 import UIKit
 import Vision
+import SwiftOCR
 
 class ImageAnalyzerViewController: BaseViewController {
 
     let UI_TESTING = true
     @IBOutlet weak var imageView: UIImageView!
     public var capturedImage: UIImage!
+    private let ocr = SwiftOCR()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,13 +58,17 @@ extension ImageAnalyzerViewController {
         DispatchQueue.main.async {
             self.imageView.layer.sublayers?.removeSubrange(1...)
             for region in results {
-                self.drawWordBox(box: region)
+                let frame = self.getFrameForText(box: region)
+                self.drawWordBox(forFrame: frame)
                 
                 if let boxes = region.characterBoxes {
                     for characterBox in boxes {
                         self.drawLetterBox(box: characterBox)
                     }
                 }
+                
+                // Analyze the text
+//                self.analyze(imageView: self.imageView, frame: frame)
             }
         }
     }
@@ -79,12 +85,31 @@ extension ImageAnalyzerViewController {
     
 }
 
-// MARK: - Drawing
+// MARK: - Image functions
 extension ImageAnalyzerViewController {
     
-    private func drawWordBox(box: VNTextObservation) {
+    private func getFrame(for image: UIImage, inImageViewAspectFit imageView: UIImageView) -> CGRect {
+        let imageRatio = (image.size.width / image.size.height)
+        let viewRatio = imageView.frame.size.width / imageView.frame.size.height
+        if imageRatio < viewRatio {
+            let scale = imageView.frame.size.height / image.size.height
+            let width = scale * image.size.width
+            let topLeftX = (imageView.frame.size.width - width) * 0.5
+            return CGRect(x: topLeftX, y: 0, width: width, height: imageView.frame.size.height)
+        } else {
+            let scale = imageView.frame.size.width / image.size.width
+            let height = scale * image.size.height
+            let topLeftY = (imageView.frame.size.height - height) * 0.5
+            return CGRect(x: 0.0, y: topLeftY, width: imageView.frame.size.width, height: height)
+        }
+    }
+    
+    private func getFrameForText(box: VNTextObservation) -> CGRect {
         guard let boxes = box.characterBoxes else {
-            return
+            return CGRect.zero
+        }
+        guard let image = self.imageView.image else {
+            return CGRect.zero
         }
         var maxX: CGFloat = 9999
         var maxY: CGFloat = 9999
@@ -106,13 +131,47 @@ extension ImageAnalyzerViewController {
             }
         }
         
-        let xCoord = maxX * self.imageView.frame.size.width
-        let yCoord = (1 - minY) * self.imageView.frame.size.height
-        let width = (minX - maxX) * self.imageView.frame.size.width
-        let height = (minY - maxY) * self.imageView.frame.size.height
+        let frame = getFrame(for: image, inImageViewAspectFit: self.imageView)
+        let xCoord = maxX * frame.size.width
+        let yCoord = (1 - minY) * frame.size.height
+        let width = (minX - maxX) * frame.size.width
+        let height = (minY - maxY) * frame.size.height
         
+        return CGRect(x: xCoord, y: yCoord, width: width, height: height)
+    }
+    
+    private func getImage(forFrame frame: CGRect, fromImageView imageView: UIImageView) -> UIImage {
+        guard let croppedCGImage = imageView.image?.cgImage?.cropping(to: frame) else { return UIImage() }
+        return UIImage(cgImage: croppedCGImage)
+    }
+    
+}
+
+// MARK: - OCR
+extension ImageAnalyzerViewController {
+    
+    private func analyze(imageView: UIImageView, frame: CGRect) {
+        let croppedImage = getImage(forFrame: frame, fromImageView: imageView)
+        getString(fromImage: croppedImage) { text in
+            guard let text = text else { return }
+            print(text)
+        }
+    }
+    
+    private func getString(fromImage image: UIImage, completion: @escaping (_ imageText: String?) -> Void) {
+        self.ocr.recognize(image) { recognizedString in
+            completion(recognizedString)
+        }
+    }
+    
+}
+
+// MARK: - Drawing
+extension ImageAnalyzerViewController {
+    
+    private func drawWordBox(forFrame frame: CGRect) {
         let outline = CALayer()
-        outline.frame = CGRect(x: xCoord, y: yCoord, width: width, height: height)
+        outline.frame = frame
         outline.borderWidth = 2
         outline.borderColor = UIColor.red.cgColor
         
