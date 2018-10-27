@@ -68,7 +68,7 @@ extension ImageAnalyzerViewController {
                 }
                 
                 // Analyze the text
-//                self.analyze(imageView: self.imageView, frame: frame)
+                self.analyze(imageView: self.imageView, frame: frame)
             }
         }
     }
@@ -132,11 +132,40 @@ extension ImageAnalyzerViewController {
         }
         
         let frame = getFrame(for: image, inImageViewAspectFit: self.imageView)
+        let topSpace = frame.minY
         let xCoord = maxX * frame.size.width
-        let yCoord = (1 - minY) * frame.size.height
+        let yCoord = ((1 - minY) * frame.size.height) //+ topSpace
         let width = (minX - maxX) * frame.size.width
         let height = (minY - maxY) * frame.size.height
         
+        return CGRect(x: xCoord, y: yCoord, width: width, height: height)
+    }
+    
+    private func getFrame(forBox box: VNRectangleObservation, inImageView imageView: UIImageView) -> CGRect {
+        guard let image = imageView.image else {
+            return CGRect.zero
+        }
+        
+        let maxX: CGFloat = box.topLeft.x
+        let maxY: CGFloat = box.topLeft.y
+        let minX: CGFloat = box.topRight.x
+        let minY: CGFloat = box.topLeft.y
+        
+        let frame = getFrame(for: image, inImageViewAspectFit: imageView)
+        let topSpace = frame.minY
+        let xCoord = maxX * frame.size.width
+        let yCoord = ((1 - minY) * frame.size.height) + topSpace
+        let width = (minX - maxX) * frame.size.width
+        let height = (minY - maxY) * frame.size.height
+        
+        return CGRect(x: xCoord, y: yCoord, width: width, height: height)
+    }
+    
+    private func getFrame(forBox box: VNRectangleObservation, imageView: UIImageView) -> CGRect {
+        let xCoord = box.topLeft.x * imageView.frame.size.width
+        let yCoord = (1 - box.topLeft.y) * imageView.frame.size.height
+        let width = (box.topRight.x - box.bottomLeft.x) * imageView.frame.size.width
+        let height = (box.topLeft.y - box.bottomLeft.y) * imageView.frame.size.height
         return CGRect(x: xCoord, y: yCoord, width: width, height: height)
     }
     
@@ -151,7 +180,13 @@ extension ImageAnalyzerViewController {
 extension ImageAnalyzerViewController {
     
     private func analyze(imageView: UIImageView, frame: CGRect) {
-        let croppedImage = getImage(forFrame: frame, fromImageView: imageView)
+        guard let image = imageView.image else { return }
+        let imageFrame = getFrame(for: image, inImageViewAspectFit: imageView)
+        var newFrame = frame
+        newFrame.origin.y = imageFrame.minY
+//        let croppedImage = getImage(forFrame: frame, fromImageView: imageView)
+        let croppedImage = getImage(forFrame: newFrame, fromImageView: imageView)
+        guard croppedImage.size.width != 0 && croppedImage.size.height != 0 else { return }
         getString(fromImage: croppedImage) { text in
             guard let text = text else { return }
             print(text)
@@ -179,10 +214,15 @@ extension ImageAnalyzerViewController {
     }
     
     private func drawLetterBox(box: VNRectangleObservation) {
-        let xCoord = box.topLeft.x * self.imageView.frame.size.width
-        let yCoord = (1 - box.topLeft.y) * self.imageView.frame.size.height
-        let width = (box.topRight.x - box.bottomLeft.x) * self.imageView.frame.size.width
-        let height = (box.topLeft.y - box.bottomLeft.y) * self.imageView.frame.size.height
+        guard let image = self.imageView.image else {
+            return
+        }
+        let frame = getFrame(for: image, inImageViewAspectFit: self.imageView)
+        let topSpace = frame.minY
+        let xCoord = box.topLeft.x * frame.size.width
+        let yCoord = ((1 - box.topLeft.y) * frame.size.height) + topSpace
+        let width = (box.topRight.x - box.bottomLeft.x) * frame.size.width
+        let height = (box.topLeft.y - box.bottomLeft.y) * frame.size.height
         
         let outline = CALayer()
         outline.frame = CGRect(x: xCoord, y: yCoord, width: width, height: height)
@@ -191,5 +231,7 @@ extension ImageAnalyzerViewController {
         
         self.imageView.layer.addSublayer(outline)
     }
+    
+    
     
 }
