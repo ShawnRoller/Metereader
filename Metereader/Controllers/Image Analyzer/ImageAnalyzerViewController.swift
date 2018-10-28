@@ -9,6 +9,7 @@
 import UIKit
 import Vision
 import SwiftOCR
+import TesseractOCR
 
 class ImageAnalyzerViewController: BaseViewController {
 
@@ -195,8 +196,17 @@ extension ImageAnalyzerViewController {
     }
     
     private func getString(fromImage image: UIImage, completion: @escaping (_ imageText: String?) -> Void) {
-        self.ocr.recognize(image) { recognizedString in
-            completion(recognizedString)
+        if let tesseract = G8Tesseract(language: "eng+fra") {
+            // 2
+            tesseract.engineMode = .tesseractCubeCombined
+            // 3
+            tesseract.pageSegmentationMode = .auto
+            // 4
+            tesseract.image = image.g8_blackAndWhite()
+            // 5
+            tesseract.recognize()
+            // 6
+            completion(tesseract.recognizedText)
         }
     }
     

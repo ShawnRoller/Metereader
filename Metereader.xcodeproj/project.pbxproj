@@ -14,6 +14,8 @@
 		29140D7B214EA80E005427BC /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D7A214EA80E005427BC /* MockDataManager.swift */; };
 		29140D8021504C23005427BC /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D7F21504C23005427BC /* Date+Formatting.swift */; };
 		29140D82215988C5005427BC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D81215988C5005427BC /* CameraViewController.swift */; };
+		291DBC0B218650990042B2F7 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291DBC0A218650990042B2F7 /* TesseractOCR.framework */; };
+		291DBC0D218651E40042B2F7 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 291DBC0C218651E40042B2F7 /* tessdata */; };
 		2942BF8C2186081300FB273B /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2942BF8B2186081300FB273B /* UIImage+Crop.swift */; };
 		29C2D2FC2138836D00397903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D2FB2138836D00397903 /* AppDelegate.swift */; };
 		29C2D2FE2138836D00397903 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D2FD2138836D00397903 /* LoginViewController.swift */; };
@@ -64,6 +66,8 @@
 		29140D7A214EA80E005427BC /* MockDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
 		29140D7F21504C23005427BC /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
 		29140D81215988C5005427BC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		291DBC0A218650990042B2F7 /* TesseractOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		291DBC0C218651E40042B2F7 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../../../../Downloads/OCR_Tutorial_Resources/tessdata; sourceTree = "<group>"; };
 		2942BF8B2186081300FB273B /* UIImage+Crop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Crop.swift"; sourceTree = "<group>"; };
 		29C2D2F82138836D00397903 /* Metereader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metereader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C2D2FB2138836D00397903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				291DBC0B218650990042B2F7 /* TesseractOCR.framework in Frameworks */,
 				E3A8F38BBFF1485222DD6544 /* Pods_Metereader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +227,7 @@
 		29C2D31421398C0400397903 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				291DBC0C218651E40042B2F7 /* tessdata */,
 				29C2D3072138836E00397903 /* Info.plist */,
 				29C2D31D21398F0100397903 /* Constants.swift */,
 				29C2D31F21398F3900397903 /* UIColor+Theme.swift */,
@@ -355,6 +361,7 @@
 		715AA3172DA4CB13A9FF7230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				291DBC0A218650990042B2F7 /* TesseractOCR.framework */,
 				9E77507AD7A2427E2D8B69B1 /* Pods_Metereader.framework */,
 			);
 			name = Frameworks;
@@ -372,7 +379,6 @@
 				29C2D2F52138836D00397903 /* Frameworks */,
 				29C2D2F62138836D00397903 /* Resources */,
 				EC30337349DE4764F1EE224D /* [CP] Embed Pods Frameworks */,
-				40FE1373F2BBC885964A5F30 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -439,6 +445,7 @@
 				29D9540C2166729200350580 /* AddressTableViewCell.xib in Resources */,
 				29C2D348213B2E7F00397903 /* gotham-book.ttf in Resources */,
 				29C2D341213B2E7F00397903 /* Gotham-ThinItalic.otf in Resources */,
+				291DBC0D218651E40042B2F7 /* tessdata in Resources */,
 				29C2D33F213B2E7F00397903 /* Gotham-Bold.otf in Resources */,
 				29C2D347213B2E7F00397903 /* Gotham-Black.otf in Resources */,
 				29C2D346213B2E7F00397903 /* Gotham-BlackItalic.otf in Resources */,
@@ -451,21 +458,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		40FE1373F2BBC885964A5F30 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Metereader/Pods-Metereader-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4840DD19BE18AD4D198FF76E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -494,12 +486,14 @@
 				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
 				"${BUILT_PRODUCTS_DIR}/MMMaterialDesignSpinner/MMMaterialDesignSpinner.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftOCR/SwiftOCR.framework",
+				"${BUILT_PRODUCTS_DIR}/TesseractOCRiOS/TesseractOCR.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPUImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMMaterialDesignSpinner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftOCR.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TesseractOCR.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
