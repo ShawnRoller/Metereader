@@ -14,6 +14,7 @@
 		29140D7B214EA80E005427BC /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D7A214EA80E005427BC /* MockDataManager.swift */; };
 		29140D8021504C23005427BC /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D7F21504C23005427BC /* Date+Formatting.swift */; };
 		29140D82215988C5005427BC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D81215988C5005427BC /* CameraViewController.swift */; };
+		2942BF8C2186081300FB273B /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2942BF8B2186081300FB273B /* UIImage+Crop.swift */; };
 		29C2D2FC2138836D00397903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D2FB2138836D00397903 /* AppDelegate.swift */; };
 		29C2D2FE2138836D00397903 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D2FD2138836D00397903 /* LoginViewController.swift */; };
 		29C2D3012138836D00397903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C2D2FF2138836D00397903 /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		29140D7A214EA80E005427BC /* MockDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
 		29140D7F21504C23005427BC /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
 		29140D81215988C5005427BC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		2942BF8B2186081300FB273B /* UIImage+Crop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Crop.swift"; sourceTree = "<group>"; };
 		29C2D2F82138836D00397903 /* Metereader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metereader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C2D2FB2138836D00397903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29C2D2FD2138836D00397903 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				29140D7F21504C23005427BC /* Date+Formatting.swift */,
+				2942BF8B2186081300FB273B /* UIImage+Crop.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				29C2D31E21398F0100397903 /* Constants.swift in Sources */,
 				29140D7B214EA80E005427BC /* MockDataManager.swift in Sources */,
 				29E9C8332173980300CF590F /* ImageAnalyzerViewController.swift in Sources */,
+				2942BF8C2186081300FB273B /* UIImage+Crop.swift in Sources */,
 				29C2D3112138857E00397903 /* MRButton.swift in Sources */,
 				29140D74214EA498005427BC /* APIManager.swift in Sources */,
 				29C2D2FE2138836D00397903 /* LoginViewController.swift in Sources */,

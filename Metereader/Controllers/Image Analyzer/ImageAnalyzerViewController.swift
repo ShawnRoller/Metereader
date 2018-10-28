@@ -134,7 +134,7 @@ extension ImageAnalyzerViewController {
         let frame = getFrame(for: image, inImageViewAspectFit: self.imageView)
         let topSpace = frame.minY
         let xCoord = maxX * frame.size.width
-        let yCoord = ((1 - minY) * frame.size.height) //+ topSpace
+        let yCoord = ((1 - minY) * frame.size.height) + topSpace
         let width = (minX - maxX) * frame.size.width
         let height = (minY - maxY) * frame.size.height
         
@@ -182,15 +182,16 @@ extension ImageAnalyzerViewController {
     private func analyze(imageView: UIImageView, frame: CGRect) {
         guard let image = imageView.image else { return }
         let imageFrame = getFrame(for: image, inImageViewAspectFit: imageView)
-        var newFrame = frame
-        newFrame.origin.y = imageFrame.minY
-//        let croppedImage = getImage(forFrame: frame, fromImageView: imageView)
-        let croppedImage = getImage(forFrame: newFrame, fromImageView: imageView)
+        let translation = image.size.width / imageView.frame.width
+        let newFrame = CGRect(x: frame.origin.x * translation, y: (frame.origin.y - imageFrame.origin.y) * translation, width: frame.width * translation, height: frame.height * translation)
+        
+        let croppedImage = image.crop(rect: newFrame)
         guard croppedImage.size.width != 0 && croppedImage.size.height != 0 else { return }
-        getString(fromImage: croppedImage) { text in
-            guard let text = text else { return }
-            print(text)
-        }
+            getString(fromImage: croppedImage) { text in
+                guard let text = text else { return }
+                print(text)
+            }
+        
     }
     
     private func getString(fromImage image: UIImage, completion: @escaping (_ imageText: String?) -> Void) {
