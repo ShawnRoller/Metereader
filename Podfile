@@ -4,4 +4,5 @@ use_frameworks!
 target 'Metereader' do
   pod 'MMMaterialDesignSpinner'
   pod 'SwiftOCR'
+  pod 'SwiftyTesseract'
 end
