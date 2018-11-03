@@ -52,6 +52,7 @@
 		29D9540C2166729200350580 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D9540A2166729200350580 /* AddressTableViewCell.xib */; };
 		29E9C8332173980300CF590F /* ImageAnalyzerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E9C8322173980300CF590F /* ImageAnalyzerViewController.swift */; };
 		29E9C8352173981B00CF590F /* MeterCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E9C8342173981B00CF590F /* MeterCaptureViewController.swift */; };
+		29EBB084218E01F000D078DF /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 29EBB083218E01F000D078DF /* tessdata */; };
 		E3A8F38BBFF1485222DD6544 /* Pods_Metereader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E77507AD7A2427E2D8B69B1 /* Pods_Metereader.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		29D9540A2166729200350580 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
 		29E9C8322173980300CF590F /* ImageAnalyzerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalyzerViewController.swift; sourceTree = "<group>"; };
 		29E9C8342173981B00CF590F /* MeterCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterCaptureViewController.swift; sourceTree = "<group>"; };
+		29EBB083218E01F000D078DF /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = "Metereader/Supporting Files/tessdata"; sourceTree = "<group>"; };
 		4028EE9BDFD0781F8D18D0B1 /* Pods-Metereader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metereader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Metereader/Pods-Metereader.debug.xcconfig"; sourceTree = "<group>"; };
 		9E77507AD7A2427E2D8B69B1 /* Pods_Metereader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Metereader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -160,6 +162,7 @@
 		29C2D2EF2138836C00397903 = {
 			isa = PBXGroup;
 			children = (
+				29EBB083218E01F000D078DF /* tessdata */,
 				29C2D2FA2138836D00397903 /* Metereader */,
 				29C2D2F92138836D00397903 /* Products */,
 				0AA3A571ACE73AA45F26B06D /* Pods */,
@@ -421,6 +424,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29EBB084218E01F000D078DF /* tessdata in Resources */,
 				29C2D34A213B2E7F00397903 /* Gotham-Ultra.otf in Resources */,
 				29C2D33E213B2E7F00397903 /* Gotham-LightItalic.otf in Resources */,
 				29D95403216555FC00350580 /* AddressPopoverViewController.xib in Resources */,
