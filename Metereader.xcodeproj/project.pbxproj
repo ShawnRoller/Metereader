@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2910E8EA21932F63009A2FB9 /* CGRect+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2910E8E921932F63009A2FB9 /* CGRect+Scaling.swift */; };
 		29140D71214EA474005427BC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D70214EA474005427BC /* DataManager.swift */; };
 		29140D74214EA498005427BC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D73214EA498005427BC /* APIManager.swift */; };
 		29140D76214EA4A2005427BC /* MockAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D75214EA4A2005427BC /* MockAPIManager.swift */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		014AB7B6319F657A0D5837FC /* Pods-Metereader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metereader.release.xcconfig"; path = "Pods/Target Support Files/Pods-Metereader/Pods-Metereader.release.xcconfig"; sourceTree = "<group>"; };
+		2910E8E921932F63009A2FB9 /* CGRect+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Scaling.swift"; sourceTree = "<group>"; };
 		29140D70214EA474005427BC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		29140D73214EA498005427BC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		29140D75214EA4A2005427BC /* MockAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIManager.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				29140D7F21504C23005427BC /* Date+Formatting.swift */,
 				2942BF8B2186081300FB273B /* UIImage+Crop.swift */,
+				2910E8E921932F63009A2FB9 /* CGRect+Scaling.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C2D356213DC5E900397903 /* HistoryTableViewCell.swift in Sources */,
+				2910E8EA21932F63009A2FB9 /* CGRect+Scaling.swift in Sources */,
 				29140D71214EA474005427BC /* DataManager.swift in Sources */,
 				29C2D31E21398F0100397903 /* Constants.swift in Sources */,
 				29140D7B214EA80E005427BC /* MockDataManager.swift in Sources */,
