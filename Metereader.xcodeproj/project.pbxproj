@@ -50,6 +50,7 @@
 		29D9540621655A1900350580 /* ContainerViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D9540521655A1900350580 /* ContainerViewControllerProtocol.swift */; };
 		29D9540B2166729200350580 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D954092166729200350580 /* AddressTableViewCell.swift */; };
 		29D9540C2166729200350580 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D9540A2166729200350580 /* AddressTableViewCell.xib */; };
+		29E5E24F219633C2000FB966 /* CGRect+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E5E24E219633C2000FB966 /* CGRect+Scaling.swift */; };
 		29E9C8332173980300CF590F /* ImageAnalyzerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E9C8322173980300CF590F /* ImageAnalyzerViewController.swift */; };
 		29E9C8352173981B00CF590F /* MeterCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E9C8342173981B00CF590F /* MeterCaptureViewController.swift */; };
 		29EBB084218E01F000D078DF /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 29EBB083218E01F000D078DF /* tessdata */; };
@@ -103,6 +104,7 @@
 		29D9540521655A1900350580 /* ContainerViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewControllerProtocol.swift; sourceTree = "<group>"; };
 		29D954092166729200350580 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		29D9540A2166729200350580 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		29E5E24E219633C2000FB966 /* CGRect+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Scaling.swift"; sourceTree = "<group>"; };
 		29E9C8322173980300CF590F /* ImageAnalyzerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalyzerViewController.swift; sourceTree = "<group>"; };
 		29E9C8342173981B00CF590F /* MeterCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterCaptureViewController.swift; sourceTree = "<group>"; };
 		29EBB083218E01F000D078DF /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = "Metereader/Supporting Files/tessdata"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			children = (
 				29140D7F21504C23005427BC /* Date+Formatting.swift */,
 				2942BF8B2186081300FB273B /* UIImage+Crop.swift */,
+				29E5E24E219633C2000FB966 /* CGRect+Scaling.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C2D356213DC5E900397903 /* HistoryTableViewCell.swift in Sources */,
+				29E5E24F219633C2000FB966 /* CGRect+Scaling.swift in Sources */,
 				29140D71214EA474005427BC /* DataManager.swift in Sources */,
 				29C2D31E21398F0100397903 /* Constants.swift in Sources */,
 				29140D7B214EA80E005427BC /* MockDataManager.swift in Sources */,

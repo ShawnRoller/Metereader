@@ -170,7 +170,7 @@ extension ImageAnalyzerViewController {
         guard let image = imageView.image else { return }
         let imageFrame = getFrame(for: image, inImageViewAspectFit: imageView)
         let translation = max(image.size.width, image.size.height) / max(imageView.frame.width, imageView.frame.height)
-        let newFrame = CGRect(x: frame.origin.x * translation, y: (frame.origin.y - imageFrame.origin.y) * translation, width: frame.width * translation, height: frame.height * translation)
+        let newFrame = CGRect(x: frame.origin.x * translation, y: (frame.origin.y - imageFrame.origin.y) * translation, width: frame.width * translation, height: frame.height * translation).scaleUp(scaleUp: 0.1)
         
         let croppedImage = image.crop(rect: newFrame)
         guard croppedImage.size.width != 0 && croppedImage.size.height != 0 else { return }
