@@ -8,7 +8,6 @@
 
 import UIKit
 import Vision
-import SwiftOCR
 import SwiftyJSON
 
 class ImageAnalyzerViewController: BaseViewController {
@@ -16,7 +15,6 @@ class ImageAnalyzerViewController: BaseViewController {
     let UI_TESTING = true
     @IBOutlet weak var imageView: UIImageView!
     public var capturedImage: UIImage!
-    private let ocr = SwiftOCR()
     
     let googleAPIKey = "AIzaSyCHl_wiateX3k8PfEXEqmlE6AyP1KsX3Eo"
     var googleURL: URL {
@@ -75,7 +73,7 @@ extension ImageAnalyzerViewController {
                 }
                 
                 // Analyze the text
-                self.analyze(imageView: self.imageView, frame: frame)
+                self.cloudAnalyze(imageView: self.imageView, frame: frame)
             }
         }
     }
@@ -158,58 +156,18 @@ extension ImageAnalyzerViewController {
 // MARK: - OCR
 extension ImageAnalyzerViewController {
     
-    private func analyze(imageView: UIImageView, frame: CGRect) {
+    private func cloudAnalyze(imageView: UIImageView, frame: CGRect) {
         guard let image = imageView.image else { return }
         let imageFrame = getFrame(for: image, inImageViewAspectFit: imageView)
         let translation = max(image.size.width, image.size.height) / max(imageView.frame.width, imageView.frame.height)
         let newFrame = CGRect(x: frame.origin.x * translation, y: (frame.origin.y - imageFrame.origin.y) * translation, width: frame.width * translation, height: frame.height * translation).scaleUp(scaleUp: 0.25)
-        
+
         let croppedImage = image.crop(rect: newFrame)
         guard croppedImage.size.width != 0 && croppedImage.size.height != 0 else { return }
         
         // Send request to google
         let binaryImageData = base64EncodeImage(croppedImage)
         createRequest(with: binaryImageData)
-        getString(fromImage: croppedImage) { text in
-            guard let text = text else { return }
-            print("ocr text word: \(text)")
-        }
-    }
-    
-//    private func cloudAnalyze(imageView: UIImageView, frame: CGRect) {
-//
-//
-//        guard let image = imageView.image else { return }
-//        let imageFrame = getFrame(for: image, inImageViewAspectFit: imageView)
-//        let translation = max(image.size.width, image.size.height) / max(imageView.frame.width, imageView.frame.height)
-//        let newFrame = CGRect(x: frame.origin.x * translation, y: (frame.origin.y - imageFrame.origin.y) * translation, width: frame.width * translation, height: frame.height * translation).scaleUp(scaleUp: 0.1)
-//
-//        let croppedImage = image.crop(rect: newFrame)
-//        guard croppedImage.size.width != 0 && croppedImage.size.height != 0 else { return }
-//        // Send request to google
-//        let binaryImageData = base64EncodeImage(croppedImage)
-//        createRequest(with: binaryImageData)
-//    }
-    
-    private func analyzeLetter(imageView: UIImageView, frame: CGRect) {
-        guard let image = imageView.image else { return }
-        let imageFrame = getFrame(for: image, inImageViewAspectFit: imageView)
-        let translation = max(image.size.width, image.size.height) / max(imageView.frame.width, imageView.frame.height)
-        let newFrame = CGRect(x: frame.origin.x * translation, y: (frame.origin.y - imageFrame.origin.y) * translation, width: frame.width * translation, height: frame.height * translation).scaleUp(scaleUp: 0.1)
-        
-        let croppedImage = image.crop(rect: newFrame)
-        guard croppedImage.size.width != 0 && croppedImage.size.height != 0 else { return }
-        getString(fromImage: croppedImage) { text in
-            guard let text = text else { return }
-            print("ocr text letter: \(text)")
-        }
-        
-    }
-    
-    private func getString(fromImage image: UIImage, completion: @escaping (_ imageText: String?) -> Void) {
-        self.ocr.recognize(image) { recognizedString in
-            completion(recognizedString)
-        }
     }
     
 }
@@ -242,9 +200,6 @@ extension ImageAnalyzerViewController {
         outline.frame = outlineFrame
         outline.borderWidth = 2
         outline.borderColor = UIColor.yellow.cgColor
-        
-        // capture a letter at a time
-        analyzeLetter(imageView: self.imageView, frame: outlineFrame)
         
         self.imageView.layer.addSublayer(outline)
     }
