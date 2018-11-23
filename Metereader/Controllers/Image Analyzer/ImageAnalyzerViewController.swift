@@ -15,11 +15,6 @@ class ImageAnalyzerViewController: BaseViewController {
     let UI_TESTING = true
     @IBOutlet weak var imageView: UIImageView!
     public var capturedImage: UIImage!
-    
-    let googleAPIKey = "AIzaSyCHl_wiateX3k8PfEXEqmlE6AyP1KsX3Eo"
-    var googleURL: URL {
-        return URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\(googleAPIKey)")!
-    }
     let session = URLSession.shared
     
     override func viewDidLoad() {
@@ -235,7 +230,7 @@ extension ImageAnalyzerViewController {
     func createRequest(with imageBase64: String) {
         // Create our request URL
         
-        var request = URLRequest(url: googleURL)
+        var request = URLRequest(url: APIKey.googleURL)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(Bundle.main.bundleIdentifier ?? "", forHTTPHeaderField: "X-Ios-Bundle-Identifier")
