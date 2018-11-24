@@ -1,32 +1,20 @@
 PODS:
-  - GPUImage (0.1.7)
   - MMMaterialDesignSpinner (0.2.5)
-  - SwiftOCR (1.1):
-    - GPUImage
   - SwiftyJSON (3.1.4)
-  - SwiftyTesseract (2.0.1)
 
 DEPENDENCIES:
   - MMMaterialDesignSpinner
-  - SwiftOCR
   - SwiftyJSON (~> 3.1)
-  - SwiftyTesseract
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - GPUImage
     - MMMaterialDesignSpinner
-    - SwiftOCR
     - SwiftyJSON
-    - SwiftyTesseract
 
 SPEC CHECKSUMS:
-  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   MMMaterialDesignSpinner: a548042720c2e5f04212048483085d7942ac3e81
-  SwiftOCR: e1a5c7582f074b54df2b1ad273983088b3cf5d45
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  SwiftyTesseract: f0e6b1b3036af44c01b9ba488463305b196106a6
 
-PODFILE CHECKSUM: b57159e2c06fda4362de17c1e05ec9bbedd113a1
+PODFILE CHECKSUM: ad2ff5c39c6b214fb13b876821a0f36ae030c762
 
 COCOAPODS: 1.5.3

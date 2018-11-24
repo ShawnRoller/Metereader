@@ -40,13 +40,26 @@ class ImageAnalyzerViewController: BaseViewController {
     
 }
 
+// MARK: - Segue
+extension ImageAnalyzerViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? MeterCaptureViewController, let reading = sender as? Int else { return }
+        destination.currentReading = reading
+        // TODO: - Set this appropriately
+        destination.previousReading = 50000
+    }
+    
+}
+
 // MARK: - Vision
 extension ImageAnalyzerViewController {
     
     private func getRequest() -> VNDetectTextRectanglesRequest {
         return VNDetectTextRectanglesRequest(completionHandler: { [unowned self] (request, error) in
             guard let results = request.results, error == nil else {
-                // TODO: - Handle no text detected
+                self.showAlert(message: "No meter detected. Please try again.", buttonTitle: "OK")
+                self.navigationController?.popToViewController(CameraViewController(), animated: true)
                 return
             }
             let result = results.compactMap({$0 as? VNTextObservation})
@@ -79,7 +92,8 @@ extension ImageAnalyzerViewController {
         do {
             try imageHandler.perform([request])
         } catch {
-            // TODO: handle errors
+            self.showAlert(message: "Something went wrong! Please try again.", buttonTitle: "OK")
+            self.navigationController?.popToViewController(CameraViewController(), animated: true)
         }
     }
     
@@ -140,12 +154,6 @@ extension ImageAnalyzerViewController {
         
         return CGRect(x: xCoord, y: yCoord, width: width, height: height)
     }
-    
-    private func getImage(forFrame frame: CGRect, fromImageView imageView: UIImageView) -> UIImage {
-        guard let croppedCGImage = imageView.image?.cgImage?.cropping(to: frame) else { return UIImage() }
-        return UIImage(cgImage: croppedCGImage)
-    }
-    
 }
 
 // MARK: - OCR
@@ -281,8 +289,6 @@ extension ImageAnalyzerViewController {
         
         // Update UI on the main thread
         DispatchQueue.main.async(execute: {
-            
-            
             // Use SwiftyJSON to parse results
             let json = JSON(data: dataToParse)
             let errorObj: JSON = json["error"]
@@ -293,62 +299,11 @@ extension ImageAnalyzerViewController {
             } else {
                 // Parse the response
                 print(json)
-                let responses: JSON = json["responses"][0]
+                let text: JSON = json["responses"][0]["fullTextAnnotation"]["text"]
+                let reading = text.intValue
                 
-                // Get face annotations
-//                let faceAnnotations: JSON = responses["faceAnnotations"]
-//                if faceAnnotations != nil {
-//                    let emotions: Array<String> = ["joy", "sorrow", "surprise", "anger"]
-//
-//                    let numPeopleDetected:Int = faceAnnotations.count
-//
-//                    self.faceResults.text = "People detected: \(numPeopleDetected)\n\nEmotions detected:\n"
-//
-//                    var emotionTotals: [String: Double] = ["sorrow": 0, "joy": 0, "surprise": 0, "anger": 0]
-//                    var emotionLikelihoods: [String: Double] = ["VERY_LIKELY": 0.9, "LIKELY": 0.75, "POSSIBLE": 0.5, "UNLIKELY":0.25, "VERY_UNLIKELY": 0.0]
-//
-//                    for index in 0..<numPeopleDetected {
-//                        let personData:JSON = faceAnnotations[index]
-//
-//                        // Sum all the detected emotions
-//                        for emotion in emotions {
-//                            let lookup = emotion + "Likelihood"
-//                            let result:String = personData[lookup].stringValue
-//                            emotionTotals[emotion]! += emotionLikelihoods[result]!
-//                        }
-//                    }
-//                    // Get emotion likelihood as a % and display in UI
-//                    for (emotion, total) in emotionTotals {
-//                        let likelihood:Double = total / Double(numPeopleDetected)
-//                        let percent: Int = Int(round(likelihood * 100))
-//                        self.faceResults.text! += "\(emotion): \(percent)%\n"
-//                    }
-//                } else {
-//                    self.faceResults.text = "No faces found"
-//                }
-//
-//                // Get label annotations
-//                let labelAnnotations: JSON = responses["labelAnnotations"]
-//                let numLabels: Int = labelAnnotations.count
-//                var labels: Array<String> = []
-//                if numLabels > 0 {
-//                    var labelResultsText:String = "Labels found: "
-//                    for index in 0..<numLabels {
-//                        let label = labelAnnotations[index]["description"].stringValue
-//                        labels.append(label)
-//                    }
-//                    for label in labels {
-//                        // if it's not the last item add a comma
-//                        if labels[labels.count - 1] != label {
-//                            labelResultsText += "\(label), "
-//                        } else {
-//                            labelResultsText += "\(label)"
-//                        }
-//                    }
-//                    self.labelResults.text = labelResultsText
-//                } else {
-//                    self.labelResults.text = "No labels found"
-//                }
+                // Segue to the bill summary
+                self.performSegue(withIdentifier: Constants.ImageAnalyzerMeterCaptureSegue, sender: reading)
             }
         })
         
