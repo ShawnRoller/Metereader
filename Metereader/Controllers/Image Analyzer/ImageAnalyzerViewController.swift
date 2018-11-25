@@ -45,6 +45,7 @@ extension ImageAnalyzerViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? MeterCaptureViewController, let reading = sender as? Int else { return }
+        destination.meterImage = capturedImage
         destination.currentReading = reading
         // TODO: - Set this appropriately
         destination.previousReading = 50000

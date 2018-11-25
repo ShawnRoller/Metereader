@@ -14,6 +14,7 @@
 		29140D7B214EA80E005427BC /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D7A214EA80E005427BC /* MockDataManager.swift */; };
 		29140D8021504C23005427BC /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D7F21504C23005427BC /* Date+Formatting.swift */; };
 		29140D82215988C5005427BC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29140D81215988C5005427BC /* CameraViewController.swift */; };
+		292FD2BD21AB0D3B00E4A84F /* MRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292FD2BC21AB0D3B00E4A84F /* MRView.swift */; };
 		2942BF8C2186081300FB273B /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2942BF8B2186081300FB273B /* UIImage+Crop.swift */; };
 		2951843221A887DC0063492E /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951843121A887DC0063492E /* Private.swift */; };
 		29C2D2FC2138836D00397903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C2D2FB2138836D00397903 /* AppDelegate.swift */; };
@@ -67,6 +68,7 @@
 		29140D7A214EA80E005427BC /* MockDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
 		29140D7F21504C23005427BC /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
 		29140D81215988C5005427BC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		292FD2BC21AB0D3B00E4A84F /* MRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRView.swift; sourceTree = "<group>"; };
 		2942BF8B2186081300FB273B /* UIImage+Crop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Crop.swift"; sourceTree = "<group>"; };
 		2951843121A887DC0063492E /* Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
 		29C2D2F82138836D00397903 /* Metereader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metereader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +210,7 @@
 			children = (
 				29C2D30E2138857000397903 /* MRTextField.swift */,
 				29C2D3102138857E00397903 /* MRButton.swift */,
+				292FD2BC21AB0D3B00E4A84F /* MRView.swift */,
 			);
 			path = "1st Party";
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				29140D79214EA615005427BC /* CustomerModels.swift in Sources */,
 				2951843221A887DC0063492E /* Private.swift in Sources */,
 				29140D8021504C23005427BC /* Date+Formatting.swift in Sources */,
+				292FD2BD21AB0D3B00E4A84F /* MRView.swift in Sources */,
 				29D95402216555FC00350580 /* AddressPopoverViewController.swift in Sources */,
 				29E9C8352173981B00CF590F /* MeterCaptureViewController.swift in Sources */,
 				29D9540B2166729200350580 /* AddressTableViewCell.swift in Sources */,
