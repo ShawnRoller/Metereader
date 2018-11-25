@@ -106,6 +106,7 @@ extension HistoryViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cellID, for: indexPath) as! HistoryTableViewCell
         let bill = self.history[indexPath.row]
         cell.configureCell(bill)
+        cell.clipsToBounds = true
         return cell
     }
     
