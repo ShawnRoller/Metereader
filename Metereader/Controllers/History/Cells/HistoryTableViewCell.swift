@@ -54,7 +54,6 @@ class HistoryTableViewCell: UITableViewCell {
         self.tagView.isHidden = false
         self.tagView.transform = CGAffineTransform(rotationAngle: CGFloat.pi * -0.25)
         
-//        let daysTilDue = bill.dueDate.difference(to: Date())
         let daysTilDue = Date().difference(to: bill.dueDate)
         if daysTilDue < 0 {
             self.tagDueLabel.text = ""

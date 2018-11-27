@@ -34,7 +34,7 @@ struct MockDataManager: DataManagerProtocol {
             
             let total: Double = 300 - (Double(i) * 10)
             
-            let bill = BillingHistory(statementDate: statementDate!, paymentDate: paymentDate!, dueDate: paymentDate!, totalBill: total)
+            let bill = BillingHistory(statementDate: statementDate!, paymentDate: paymentDate!, dueDate: paymentDate!, totalBill: total, meterReading: 12345)
             history.append(bill)
         }
         
@@ -49,7 +49,7 @@ struct MockDataManager: DataManagerProtocol {
             
             let total: Double = 300 - (Double(i) * 10)
             
-            let bill = BillingHistory(statementDate: statementDate!, paymentDate: nil, dueDate: dueDate!, totalBill: total)
+            let bill = BillingHistory(statementDate: statementDate!, paymentDate: nil, dueDate: dueDate!, totalBill: total, meterReading: 12345 + i)
             history.append(bill)
         }
         
@@ -57,7 +57,7 @@ struct MockDataManager: DataManagerProtocol {
         var dateComponent = DateComponents()
         dateComponent.month = -1
         let dueDate = Calendar.current.date(byAdding: dateComponent, to: Date())
-        let overdueBill = BillingHistory(statementDate: Date(), paymentDate: nil, dueDate: dueDate!, totalBill: 666)
+        let overdueBill = BillingHistory(statementDate: Date(), paymentDate: nil, dueDate: dueDate!, totalBill: 666, meterReading: 12345)
         history.append(overdueBill)
         
         completion(history.sorted(by: { $1.statementDate < $0.statementDate }))

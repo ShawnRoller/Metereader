@@ -1,12 +1,20 @@
 PODS:
   - MMMaterialDesignSpinner (0.2.5)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - MMMaterialDesignSpinner
+  - SwiftyJSON (~> 3.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MMMaterialDesignSpinner
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   MMMaterialDesignSpinner: a548042720c2e5f04212048483085d7942ac3e81
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 5a8e7c1304f7a6cb3673955bdae2f492fdf11ac4
+PODFILE CHECKSUM: ad2ff5c39c6b214fb13b876821a0f36ae030c762
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

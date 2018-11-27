@@ -57,8 +57,14 @@ class HistoryViewController: BaseViewController {
         self.tableView.dataSource = self
         self.tableView.allowsSelection = false
         self.tableView.register(UINib(nibName: self.cellID, bundle: nil), forCellReuseIdentifier: self.cellID)
-        let insets = UIEdgeInsetsMake(0, 0, 87, 0)
+        let insets = UIEdgeInsets(top: 0, left: 0, bottom: 87, right: 0)
         self.tableView.contentInset = insets
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? CameraViewController, let lastReading = sender as? Int {
+            destination.lastReading = lastReading
+        }
     }
 
 }
@@ -67,7 +73,11 @@ class HistoryViewController: BaseViewController {
 extension HistoryViewController {
     
     @objc private func cameraButtonTapped(sender: Any) {
-        self.performSegue(withIdentifier: Constants.historyCameraSegue, sender: nil)
+        var lastReading = 0
+        if let firstHistory = history.first {
+            lastReading = firstHistory.meterReading
+        }
+        self.performSegue(withIdentifier: Constants.historyCameraSegue, sender: lastReading)
     }
     
     @objc private func logoutButtonTapped(sender: Any) {
@@ -106,6 +116,7 @@ extension HistoryViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cellID, for: indexPath) as! HistoryTableViewCell
         let bill = self.history[indexPath.row]
         cell.configureCell(bill)
+        cell.clipsToBounds = true
         return cell
     }
     

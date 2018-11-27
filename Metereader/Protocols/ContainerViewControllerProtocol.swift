@@ -27,7 +27,7 @@ extension ContainerViewControllerProtocol {
     func addViewController(_ childVC: UIViewController, with frame: CGRect, from side: ViewSide, completion: ((_ done: Bool) -> Void)?) {
         guard !viewControllerIsPresented(childVC) else { completion?(false); return }
         
-        addChildViewController(childVC)
+        addChild(childVC)
         var newFrame = frame
         var alpha: CGFloat = 0
         
@@ -50,7 +50,7 @@ extension ContainerViewControllerProtocol {
         }
         childVC.view.frame = newFrame
         self.view.addSubview(childVC.view)
-        childVC.didMove(toParentViewController: self)
+        childVC.didMove(toParent: self)
         
         if alpha > 0 {
             // Fade the view in
@@ -91,9 +91,9 @@ extension ContainerViewControllerProtocol {
         }
         
         func removeView() {
-            childVC.willMove(toParentViewController: nil)
+            childVC.willMove(toParent: nil)
             childVC.view.removeFromSuperview()
-            childVC.removeFromParentViewController()
+            childVC.removeFromParent()
         }
         
         guard alpha > 0 else {
@@ -133,7 +133,7 @@ extension ContainerViewControllerProtocol {
     
     func viewControllerIsPresented(_ childVC: UIViewController?) -> Bool {
         var presented = false
-        for child in self.childViewControllers {
+        for child in self.children {
             if child == childVC {
                 presented = true
                 break
