@@ -13,6 +13,7 @@ struct BillingHistory {
     var paymentDate: Date?
     var dueDate: Date
     var totalBill: Double
+    var meterReading: Int
     var billString: String {
         let formatter = NumberFormatter()
         formatter.locale = Locale.current

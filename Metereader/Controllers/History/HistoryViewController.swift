@@ -60,6 +60,12 @@ class HistoryViewController: BaseViewController {
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: 87, right: 0)
         self.tableView.contentInset = insets
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? CameraViewController, let lastReading = sender as? Int {
+            destination.lastReading = lastReading
+        }
+    }
 
 }
 
@@ -67,7 +73,11 @@ class HistoryViewController: BaseViewController {
 extension HistoryViewController {
     
     @objc private func cameraButtonTapped(sender: Any) {
-        self.performSegue(withIdentifier: Constants.historyCameraSegue, sender: nil)
+        var lastReading = 0
+        if let firstHistory = history.first {
+            lastReading = firstHistory.meterReading
+        }
+        self.performSegue(withIdentifier: Constants.historyCameraSegue, sender: lastReading)
     }
     
     @objc private func logoutButtonTapped(sender: Any) {

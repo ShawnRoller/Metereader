@@ -11,6 +11,8 @@ import AVFoundation
 
 class CameraViewController: BaseViewController {
 
+    public var lastReading: Int = 0
+    
     @IBOutlet weak var previewView: UIView!
     private var captureSession: AVCaptureSession!
     private var stillImageOutput: AVCapturePhotoOutput!
@@ -81,6 +83,7 @@ extension CameraViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? ImageAnalyzerViewController, let image = sender as? UIImage else { return }
         destination.capturedImage = image
+        destination.lastReading = self.lastReading
     }
 
 }

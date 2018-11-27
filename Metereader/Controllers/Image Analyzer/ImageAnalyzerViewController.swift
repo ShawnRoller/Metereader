@@ -15,6 +15,7 @@ class ImageAnalyzerViewController: BaseViewController {
     let UI_TESTING = true
     @IBOutlet weak var imageView: UIImageView!
     public var capturedImage: UIImage!
+    public var lastReading: Int = 0
     let session = URLSession.shared
     
     override func viewDidLoad() {
@@ -48,7 +49,7 @@ extension ImageAnalyzerViewController {
         destination.meterImage = capturedImage
         destination.currentReading = reading
         // TODO: - Set this appropriately
-        destination.previousReading = 50000
+        destination.previousReading = self.lastReading
     }
     
 }
