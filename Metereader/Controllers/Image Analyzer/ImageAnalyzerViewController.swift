@@ -20,12 +20,7 @@ class ImageAnalyzerViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if UI_TESTING {
-            self.capturedImage = self.imageView.image!
-        }
-        else {
-            self.imageView.image = self.capturedImage
-        }
+        self.imageView.image = self.capturedImage
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -72,16 +67,20 @@ extension ImageAnalyzerViewController {
     private func processTextResults(_ results: [VNTextObservation]) {
         DispatchQueue.main.async {
             self.imageView.layer.sublayers?.removeSubrange(1...)
+            if results.count == 0 {
+                self.cloudAnalyze(imageView: self.imageView, frame: self.imageView.frame)
+                return
+            }
             for region in results {
                 let frame = self.getFrameForText(box: region)
                 self.drawWordBox(forFrame: frame)
-                
+
                 if let boxes = region.characterBoxes {
                     for characterBox in boxes {
                         self.drawLetterBox(box: characterBox)
                     }
                 }
-                
+
                 // Analyze the text
                 self.cloudAnalyze(imageView: self.imageView, frame: frame)
             }
