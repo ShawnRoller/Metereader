@@ -12,7 +12,8 @@ import SwiftyJSON
 
 class ImageAnalyzerViewController: BaseViewController {
 
-    let UI_TESTING = true
+    let TEST_IMAGE: UIImage = UIImage(named: "test_meter1")!
+    
     @IBOutlet weak var imageView: UIImageView!
     public var capturedImage: UIImage!
     public var lastReading: Int = 0
@@ -20,6 +21,12 @@ class ImageAnalyzerViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Use a test image in the simulator
+        #if targetEnvironment(simulator)
+            self.capturedImage = TEST_IMAGE
+        #endif
+        
         self.imageView.image = self.capturedImage
     }
     
@@ -302,6 +309,10 @@ extension ImageAnalyzerViewController {
                 print(json)
                 let text: JSON = json["responses"][0]["fullTextAnnotation"]["text"]
                 let reading = text.intValue
+                
+                if reading == 0 {
+                    return
+                }
                 
                 // Segue to the bill summary
                 self.performSegue(withIdentifier: Constants.ImageAnalyzerMeterCaptureSegue, sender: reading)
